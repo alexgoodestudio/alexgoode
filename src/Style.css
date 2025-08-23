@@ -11,6 +11,13 @@
     border-radius: 30px;
     padding: 20px;
 }
+
+.bg-bento-white{
+    background-color: #ffffff;
+    border-radius: 30px;
+    padding: 20px;
+}
+
 .bg-bento-black{
     background-color: #323232;
     border-radius: 30px;
@@ -25,33 +32,59 @@
 
 }
 
-.bg-bento-red{
-    background-color: #D52C23;
-    border-radius: 30px;
-    padding: 20px;
-
-}
 
 .box {
-    height: 50vh;
-
-    border-radius: 30px;
-    padding: 20px;
-
-}
-.half-box {
-    height: 25vh;
-    border-radius: 30px;
-    padding: 20px;
+  height: 50vh;           /* Box controls height */
+  border-radius: 30px;
+  overflow: hidden;        /* Clips the image */
+  position: relative;      /* Needed for absolute child */
 
 }
-.circle-box{
-    height: 25vh;
-    width: 25vh;
-    border-radius: 50%;
-    padding: 20px;
-    
+/*  */
+.picture-mask2 {
+  height: 38vh;      /* match GreenCard */
+  min-height: 38vh;  /* ensure it never shrinks */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
 }
+
+.picture-mask2 img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s ease; /* smooth zoom */
+}
+
+.picture-mask2:hover img {
+  transform: scale(1.1);
+}
+/*  */
+.picture-mask {
+  position: relative; /* for overlay */
+  overflow: hidden;
+  border-radius: 30px;
+}
+
+.picture-mask img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s ease; /* smooth zoom */
+}
+
+.picture-mask:hover img {
+  transform: scale(1.1);
+}
+
 
 .flip-container {
   perspective: 900px; /* subtle, natural depth */
@@ -68,7 +101,7 @@
 .flip-card {
   position: relative;
   flex: 1;
-  height: 120px;
+  height: 240px;
   transform-style: preserve-3d;
   cursor: pointer;
 }
@@ -96,48 +129,7 @@
 }
 
 /* ===== Row 1: Creativity + Technology ===== */
-.row1 .card-1 .front {
-  background-color: #f3f5ff;
-}
-.row1 .card-1 .back {
-  background-color: #E2B23F;
-}
-.row1 .card-2 .front {
-  background-color: #E2B23F;
-}
-.row1 .card-2 .back {
-  background-color: #f3f5ff;
-}
 
-/* ===== Row 2: Strategy + Experience ===== */
-.row2 .card-1 .front {
-  background-color: #f3f5ff;
-}
-.row2 .card-1 .back {
-  background-color: #E2B23F;
-  color: white;
-}
-.row2 .card-2 .front {
-  background-color: #E2B23F;
-  color: white;
-}
-.row2 .card-2 .back {
-  background-color: #f3f5ff;
-}
-
-/* ===== Row 3: Vision + Growth ===== */
-.row3 .card-1 .front {
-  background-color: #f3f5ff;
-}
-.row3 .card-1 .back {
-  background-color: #E2B23F;
-}
-.row3 .card-2 .front {
-  background-color: #E2B23F;
-}
-.row3 .card-2 .back {
-  background-color: #f3f5ff;
-}
 /* ------------------------------    TEXT SIZE SYSTEM --------------------------------*/
 
 /* Headings */

@@ -46,8 +46,8 @@ function Nav() {
         {/* Row 1 */}
         <div className="row mb-3">
           <div className="col-12 text-slate-800 p-3">
-            <h4>Row 1 - Full Width</h4>
-            <p>Some filler text for the full-width column.</p>
+            <h4>Links</h4>
+            <p>Check out my work, and other places you can find me!</p>
           </div>
         </div>
 
