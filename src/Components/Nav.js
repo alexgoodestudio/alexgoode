@@ -52,34 +52,34 @@ function Nav() {
         </div>
 
         {/* Row 2 */}
-        <div className="row mb-3">
+        <div className="row mb-3\">
           <div className="col-lg-4 col-12 text-slate-800 p-3">
-            <h5>Row 2 - Column 1</h5>
-            <p>Filler text for column 1.</p>
+            <h5>Github</h5>
+            <p>Wanna see my work?</p>
           </div>
           <div className="col-lg-4 col-12 text-slate-800 p-3">
-            <h5>Row 2 - Column 2</h5>
-            <p>Filler text for column 2.</p>
+            <h5>LinkedIn</h5>
+            <p>Lets Connect</p>
           </div>
           <div className="col-lg-4 col-12 text-slate-800 p-3">
-            <h5>Row 2 - Column 3</h5>
-            <p>Filler text for column 3.</p>
+            <h5>Made Right Studios </h5>
+            <p>Creative Web Design nd Technology Studio</p>
           </div>
         </div>
 
         {/* Row 3 */}
         <div className="row mb-3">
           <div className="col-lg-4 col-12 text-slate-800 p-3">
-            <h5>Row 3 - Column 1</h5>
-            <p>Filler text for column 1.</p>
+            <h5>Instagram</h5>
+            <p>See what I'm doing</p>
           </div>
           <div className="col-lg-4 col-12 text-slate-800 p-3">
-            <h5>Row 3 - Column 2</h5>
-            <p>Filler text for column 2.</p>
+            <h5>The Lemich Clinic</h5>
+            <p>Featured: Recent work</p>
           </div>
           <div className="col-lg-4 col-12 text-slate-800 p-3">
-            <h5>Row 3 - Column 3</h5>
-            <p>Filler text for column 3.</p>
+            <h5>Rosewood Cleaning Services</h5>
+            <p>Featured: Recent work</p>
           </div>
         </div>
       </div>

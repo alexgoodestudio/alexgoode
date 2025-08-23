@@ -1,4 +1,3 @@
-import Image2 from "../Images/Screenshot 2025-08-23 at 3.22.22 PM.png";
 import Image1 from "../Images//Screenshot 2025-08-03 at 8.17.31 PM.png";
 
 import GreenCard from "./GreenCard";
@@ -12,11 +11,26 @@ function Bento() {
       </div>
 
       {/* Column 2: Black Box */}
-      <div className="col-lg-6 col-12 d-flex">
-        <div className=" picture-mask2 bg-bento-black flex-fill">
-          <img src={Image2} alt="Screenshot" />
-        </div>
-      </div>
+ <div className="col-lg-6 col-12">
+  <div className="made-right-box d-flex flex-column items-stretch justify-center text-center bg-yellow-200 p-0">
+    <div className="flex flex-col flex-1 justify-center items-center h-full p-5">
+      <h2 className="text-6xl m-0">
+        <a
+          href="https://your-link.com"
+          className="text-gray-900 no-underline hover:text-yellow-900"
+        >
+          Made Right
+        </a>
+      </h2>
+      <p className="text-md m-0 mt-2 text-gray-800">
+        A Creative Web Design and Technology Studio.
+      </p>
+    </div>
+  </div>
+</div>
+
+
+
 
       {/* Column 3: Green Half */}
       <div className="col-lg-3 col-12 d-flex flex-column">
@@ -29,8 +43,7 @@ function Bento() {
       <div className="col-lg-6 col-12">
         <div className="bg-bento-blue box d-flex align-items-start justify-content-center text-lg text-white p-5">
           Alex Goode is the owner of Made Right Studio in Columbia South
-          Carolina. Made Right is a Creative Web Design and Technology Studio in
-          Columbia, South Carolina
+          Carolina. Made Right is a Creative Web Design and Technology Studio.
         </div>
       </div>
 
@@ -51,6 +64,14 @@ function Bento() {
     <li>Node.js / Express</li>
     <li> SQL</li>
     <li>Git / GitHub</li>
+  </ul>
+
+    {/* Section 3 */}
+  <h3 className="text-lg font-bold mb-2">Design</h3>
+  <ul className="list-disc list-inside">
+    <li>Figma</li>
+    <li>Photoshop</li>
+    <li>Illustrator</li>
   </ul>
 </div>
       </div>
