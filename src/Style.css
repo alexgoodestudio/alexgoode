@@ -31,7 +31,6 @@
 
 .bg-bento-blue{
     background-color: #2D4D83;
-    border-radius: 30px;
     padding: 20px;
 
 }
@@ -56,44 +55,13 @@ background-color: rgba(0, 0, 0, 0.075);
   border-radius: 50rem;
 }
 
-.made-right-box{
-        
-  border-radius: 30px;
-  overflow: hidden;        /* Clips the image */
-  position: relative;      /* Needed for absolute child */
-}
-
-
 .box {
   height: 50vh;           /* Box controls height */
   border-radius: 30px;
   overflow: hidden;        /* Clips the image */
   position: relative;      /* Needed for absolute child */
 }
-/*  */
-.picture-mask2 {
-  height: 38vh;      /* match GreenCard */
-  min-height: 38vh;  /* ensure it never shrinks */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
-}
 
-.picture-mask2 img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.7s ease; /* smooth zoom */
-}
-
-.picture-mask2:hover img {
-  transform: scale(1.1);
-}
 /*  */
 .picture-mask {
   position: relative; /* for overlay */
@@ -115,11 +83,6 @@ background-color: rgba(0, 0, 0, 0.075);
   transform: scale(1.1);
 }
 
-
-.flip-container {
-  perspective: 900px; /* subtle, natural depth */
-}
-
 /* ===== Flip Rows ===== */
 .flip-row {
   display: flex;
@@ -131,8 +94,10 @@ background-color: rgba(0, 0, 0, 0.075);
 .flip-card {
   position: relative;
   flex: 1;
+  height: 50vh;
   transform-style: preserve-3d;
   cursor: pointer;
+  border-radius: 30px;
 }
 
 /* Front and Back Faces */
@@ -156,21 +121,38 @@ background-color: rgba(0, 0, 0, 0.075);
 .flip-card .back {
   transform: rotateX(180deg);
 }
-/* put in your main stylesheet */
-.top-row-card {
-  height: 38vh;             /* exact height you asked for */
-  perspective: 900px;       /* 3D perspective for children */
-  transform-style: preserve-3d; /* keep child transforms 3D */
-  overflow: visible;        /* or hidden if you want children clipped */
+
+
+/* ===== Top Flip Cards ===== */
+.flip-card-top {
+  position: relative;
+  flex: 1;
+  height: 38vh;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  border-radius: 30px;
 }
 
-/* responsive fallback for smaller screens */
-@media (max-width: 992px) {
+/* Front and Back Faces */
+.flip-card-top .front,
+.flip-card-top .back {
+  position: absolute;
+  width: 100%;
+  border-radius: 30px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backface-visibility: hidden;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #000;
+  transition: background-color 0.3s;
+}
 
-  .top-row-card {
-    height: 50vh;           /* taller on small screens so content doesn't squash */
-    perspective: 700px;     /* slightly reduced perspective on small screens */
-  }
+/* Back face rotation */
+.flip-card-top .back {
+  transform: rotateX(180deg);
 }
 
 
@@ -205,6 +187,11 @@ background-color: rgba(0, 0, 0, 0.075);
 
 /* Utility: responsive scaling for smaller screens */
 @media (max-width: 1200px) {
+  .flip-card-top {
+
+  height: 50vh;
+
+}
   .text-12xl { font-size: 8rem; }
   .text-11xl { font-size: 6.5rem; }
   .text-10xl { font-size: 5.75rem; }
@@ -222,7 +209,7 @@ background-color: rgba(0, 0, 0, 0.075);
   .flip-card .front,
 .flip-card .back {
 
-  height: 90vh;
+  height: 50vh;
 
 }
   .text-12xl { font-size: 6.5rem; }

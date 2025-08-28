@@ -18,12 +18,16 @@ function BlueCard() {
       ref={boxRef}
       onMouseEnter={() => handleHover(true)}
       onMouseLeave={() => handleHover(false)}
-      style={{ height: "50vh", perspective: "900px" }}
+    
     >
       {/* Front */}
       <div
         className="front br bg-bento-blue d-flex align-items-start justify-content-center p-lg-5 p-3"
-        style={{ height: "100%", backfaceVisibility: "hidden" }}
+                style={{
+          height: "100%",
+
+        }}
+        
       >
         <div className=" align-items-start font-normal justify-content-center text-lg text-white p-5">
           <span className="font-black">Alex Goode</span> is the owner of{" "}

@@ -15,7 +15,7 @@ function Bento() {
 
       {/* Column 2: Black Box */}
       <div className="col-lg-6 col-12">
-        <div className="made-right-box top-row-card d-flex flex-column items-stretch justify-center text-center bg-green-200 p-0">
+        <div className="flip-card-top d-flex flex-column items-stretch justify-center text-center bg-green-200 p-0">
           <div className="flex flex-col flex-1 justify-center items-center h-full p-5">
             <h2 className="text-4xl m-0">
               <a
