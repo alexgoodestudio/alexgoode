@@ -168,7 +168,7 @@ background-color: rgba(0, 0, 0, 0.075);
 @media (max-width: 992px) {
 
   .top-row-card {
-    height: 45vh;           /* taller on small screens so content doesn't squash */
+    height: 50vh;           /* taller on small screens so content doesn't squash */
     perspective: 700px;     /* slightly reduced perspective on small screens */
   }
 }
@@ -222,7 +222,7 @@ background-color: rgba(0, 0, 0, 0.075);
   .flip-card .front,
 .flip-card .back {
 
-  height: 50vh;
+  height: 60vh;
 
 }
   .text-12xl { font-size: 6.5rem; }
