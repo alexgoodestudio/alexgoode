@@ -57,7 +57,7 @@ function GreenCard() {
           <h1 className="text-white text-4xl">
             <span
               ref={nameRef}
-              className="text-yellow-200 italic inline-block"
+              className="text-yellow-200  inline-block"
             >
               Alex Goode
             </span>{" "}
