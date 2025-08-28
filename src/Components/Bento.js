@@ -72,12 +72,12 @@ function Bento() {
           </ul>
 
           {/* Section 3 */}
-          <h3 className="text-lg font-bold mb-2">Design</h3>
+          {/* <h3 className="text-lg font-bold mb-2">Design</h3>
           <ul className="list-disc list-inside">
             <li>Figma</li>
             <li>Photoshop</li>
             <li>Illustrator</li>
-          </ul>
+          </ul> */}
         </div>
       </div>
       {/* <div className="col-lg-12 col-12">
