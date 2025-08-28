@@ -9,6 +9,18 @@
   font-style: italic;
 }
 
+
+.top-row-card {
+  height: 380vh;
+  perspective: 900px;
+}
+
+@media (max-width: 992px) { /* Bootstrap lg breakpoint for mobile/tablet */
+  .top-row-card {
+    height: 50vh;
+  }
+}
+
 .bg-bento-green{
     background-color: #0A7C4B;
     border-radius: 30px;

@@ -54,10 +54,10 @@ function GreenCard() {
           className="front br bg-bento-green d-flex align-items-start justify-content-center p-5"
           style={{ height: "100%", backfaceVisibility: "hidden" }}
         >
-          <h1 className="text-white text-4xl">
+          <h1 className="text-white text-4xl ">
             <span
               ref={nameRef}
-              className="text-yellow-200 italic inline-block"
+              className="text-yellow-200  text-4xl inline-block"
             >
               Alex Goode
             </span>{" "}
