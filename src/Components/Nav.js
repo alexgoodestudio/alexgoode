@@ -45,14 +45,14 @@ function Nav() {
       >
         {/* Row 1 */}
         <div className="row mb-3">
-          <div className="col-12 text-slate-800 p-3">
+          <div className="col-12 text-slate-800 p-3 text-start">
             <h4>Links</h4>
             <p>Check out my work, and other places you can find me!</p>
           </div>
         </div>
 
         {/* Row 2 */}
-        <div className="row mb-3\">
+        <div className="row mb-3">
           <div className="col-lg-4 col-12 text-slate-800 p-3">
             <h5>Github</h5>
             <p>Wanna see my work?</p>
@@ -63,7 +63,7 @@ function Nav() {
           </div>
           <div className="col-lg-4 col-12 text-slate-800 p-3">
             <h5>Made Right Studios </h5>
-            <p>Creative Web Design nd Technology Studio</p>
+            <p>Creative Web Design and Technology Studio</p>
           </div>
         </div>
 
