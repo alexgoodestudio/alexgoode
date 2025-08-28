@@ -222,7 +222,7 @@ background-color: rgba(0, 0, 0, 0.075);
   .flip-card .front,
 .flip-card .back {
 
-  height: 60vh;
+  height: 90vh;
 
 }
   .text-12xl { font-size: 6.5rem; }
