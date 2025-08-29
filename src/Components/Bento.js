@@ -16,7 +16,7 @@ function Bento() {
       {/* Column 2: Black Box */}
       <div className="col-lg-6 col-12">
         <div className="flip-card-top d-flex flex-column items-stretch justify-center text-center bg-green-200 p-0">
-          <div className="flex flex-col flex-1 justify-center items-center h-full p-5">
+          <div className="flex flex-col flex-1 justify-center items-center h-full p-lg-5 p-2">
             <h2 className="text-4xl m-0">
               <a
                 href="https://your-link.com"
@@ -51,7 +51,7 @@ function Bento() {
       {/* Column 4: Black Box */}
       <div className="col-lg-3 col-12 mb-lg-0 mb-3">
         <div
-          className="box bg-bento-black text-white p-4"
+          className="box bg-bento-black text-white p-lg-5 p-3"
           style={{ height: "50vh" }}
         >
           {/* Section 1 */}

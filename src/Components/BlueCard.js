@@ -29,7 +29,7 @@ function BlueCard() {
         }}
         
       >
-        <div className=" align-items-start font-normal justify-content-center text-lg text-white p-5">
+        <div className=" align-items-start font-normal justify-content-center text-lg text-white p-lg-4 p-3">
           <span className="font-black">Alex Goode</span> is the owner of{" "}
           <span className="font-black">Made Right Studio</span> in Columbia,
           South Carolina. Made Right is a Creative Web Design and Technology
@@ -46,7 +46,7 @@ function BlueCard() {
 
       {/* Back */}
       <div
-        className="back br d-flex align-items-start justify-content-center p-5"
+        className="back br d-flex align-items-start justify-content-center p-lg-4 p-3"
         style={{
           height: "100%",
           backgroundColor: "#f3f5ff",

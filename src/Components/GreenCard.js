@@ -51,7 +51,7 @@ function GreenCard() {
       >
         {/* Front */}
         <div
-          className="front br bg-bento-green d-flex align-items-start justify-content-center p-5"
+          className="front br bg-bento-green d-flex align-items-start justify-content-center p-lg-5 p-3"
           style={{ height: "100%", backfaceVisibility: "hidden" }}
         >
           <h1 className="text-white text-4xl ">
@@ -68,7 +68,7 @@ function GreenCard() {
 
         {/* Back */}
         <div
-          className="back br d-flex align-items-start justify-content-center p-5"
+          className="back br d-flex align-items-start justify-content-center p-lg-5 p-3"
           style={{
             height: "100%",
             backgroundColor: "#f3f5ff",
