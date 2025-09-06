@@ -246,3 +246,22 @@ background-color: rgba(0, 0, 0, 0.075);
   .text-sm   { font-size: 0.75rem; }
   .text-xs   { font-size: 0.6875rem; }
 }
+
+
+
+/* Mobile hover disable styles */
+:root {
+  --mobile-hover: auto;
+}
+
+.mobile-no-hover {
+  pointer-events: var(--mobile-hover, auto);
+}
+
+/* Alternative approach using media queries if preferred */
+@media (hover: none) and (pointer: coarse) {
+  .mobile-no-hover:hover {
+    /* Disable all hover effects on touch devices */
+    transform: none !important;
+  }
+}

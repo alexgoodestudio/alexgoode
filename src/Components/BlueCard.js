@@ -14,7 +14,7 @@ function BlueCard() {
 
   return (
     <div
-      className="flip-card br d-flex flex-column"
+      className="flip-card br d-flex flex-column blue-card-flip mobile-no-hover"
       ref={boxRef}
       onMouseEnter={() => handleHover(true)}
       onMouseLeave={() => handleHover(false)}
@@ -54,7 +54,7 @@ function BlueCard() {
         }}
       >
         <h1 className="text-slate-900 text-4xl ">
-          He currently works at <span className="text-blue-600">Whole Foods Market</span>, but is working towards creating more opportunities for <span className="text-blue-600">Made Right</span>, with hopes of growing the company.
+           <span className="text-blue-600">Made Right Studio</span> is currently an independently owned and operated business with hopes of creating more opportunities for growing the company into a small but mighty team.
         </h1>
       </div>
     </div>

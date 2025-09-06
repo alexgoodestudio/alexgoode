@@ -43,7 +43,7 @@ function GreenCard() {
   return (
     <div ref={containerRef}>
       <div
-        className="flip-card-top  br d-flex flex-column mt-lg-0 mt-3"
+        className="flip-card-top br d-flex flex-column mt-lg-0 mt-3 green-card-flip mobile-no-hover"
         
         ref={boxRef}
         onMouseEnter={() => handleHover(true)}

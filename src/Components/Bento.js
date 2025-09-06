@@ -1,25 +1,80 @@
-import Image1 from "../Images//Screenshot 2025-08-03 at 8.17.31 PM.png";
+import Image1 from "../Images//Screenshot.png";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
 import BlueCard from "./BlueCard"
 import GreenCard from "./GreenCard";
 
+gsap.registerPlugin(ScrollTrigger);
 
 function Bento() {
-//I want to implement gsap clip text to make made right slide in from top, and studio slide in from right
+  useGSAP(() => {
+    const isMobile = window.innerWidth <= 768 || 'ontouchstart' in window;
+    
+    console.log('Mobile detected:', isMobile);
+    
+    if (isMobile) {
+      document.documentElement.style.setProperty('--mobile-hover', 'none');
+      
+      console.log('Setting up scroll triggers');
+      
+      const greenCardTrigger = ScrollTrigger.create({
+        trigger: ".green-card-container + *",
+        start: "top 60%", // Adjusted for navbar - more aggressive trigger
+        end: "bottom 10%",
+        // markers: true,
+        onToggle: self => {
+          console.log('Green card trigger:', self.isActive);
+          const greenCard = document.querySelector('.green-card-flip');
+          if (greenCard) {
+            gsap.to(greenCard, {
+              rotateX: self.isActive ? 180 : 0,
+              duration: 0.7,
+              ease: "power2.inOut",
+            });
+          }
+        }
+      });
+
+      const blueCardTrigger = ScrollTrigger.create({
+        trigger: ".blue-card-container",
+        start: "center center",
+        end: "bottom 20%",
+        // markers: true,
+        onToggle: self => {
+          console.log('Blue card trigger:', self.isActive);
+          const blueCard = document.querySelector('.blue-card-flip');
+          if (blueCard) {
+            gsap.to(blueCard, {
+              rotateX: self.isActive ? 180 : 0,
+              duration: 0.7,
+              ease: "power2.inOut",
+            });
+          }
+        }
+      });
+
+      return () => {
+        greenCardTrigger.kill();
+        blueCardTrigger.kill();
+      };
+    }
+  }, []);
 
   return (
     <div className="row g-3 align-items-stretch">
       {/* Column 1: GreenCard flip */}
-      <div className="col-lg-6 col-12 ">
+      <div className="col-lg-6 col-12 px-lg-2 px-4 green-card-container">
         <GreenCard />
       </div>
 
       {/* Column 2: Black Box */}
-      <div className="col-lg-6 col-12">
+      <div className="col-lg-6 col-12 px-lg-2 px-4 ">
         <div className="flip-card-top d-flex flex-column items-stretch justify-center text-center bg-green-200 p-0">
           <div className="flex flex-col flex-1 justify-center items-center h-full p-lg-5 p-2">
             <h2 className="text-4xl m-0">
               <a
-                href="https://your-link.com"
+                href="https://maderight.netlify.app/"
                 className="text-dark no-underline "
               >
                 Made Right Studio
@@ -37,38 +92,44 @@ function Bento() {
       </div>
 
       {/* Column 3: Green Half */}
-      <div className="col-lg-3 col-12 d-flex flex-column">
+      <div className="col-lg-3 col-12 px-lg-2 px-4  d-flex flex-column">
         <div className="box picture-mask bg-bento-black">
           <img src={Image1} alt="Screenshot" />
         </div>
       </div>
 
       {/* Column 5: Image */}
-      <div className="col-lg-6 col-12">
+      <div className="col-lg-6 col-12 px-lg-2 px-4 blue-card-container">
         <BlueCard/>
       </div>
 
       {/* Column 4: Black Box */}
-      <div className="col-lg-3 col-12 mb-lg-0 mb-3">
+      <div className="col-lg-3 col-12 mb-lg-0 mb-3 px-lg-2 px-4 ">
         <div
           className="box bg-bento-black text-white p-lg-5 p-3"
           style={{ height: "50vh" }}
         >
           {/* Section 1 */}
-          <h3 className="text-lg font-bold mb-2">Frontend Skills</h3>
+          <h3 className="text-lg font-bold mb-2">Frontend </h3>
           <ul className="list-disc list-inside mb-4">
             <li>React.js</li>
             <li>REST API Development</li>
+            <li>Component Architecture</li>
+            <li>Props Management</li>
             <li>GSAP Animations</li>
-            <li>Tailwind CSS / Bootstrap</li>
+            <li>Bootstrap/ Tailwind CSS </li>
+            <li>Git</li>
           </ul>
 
           {/* Section 2 */}
-          <h3 className="text-lg font-bold mb-2">Backend & Tools</h3>
+          <h3 className="text-lg font-bold mb-2">Backend & Tools </h3>
           <ul className="list-disc list-inside">
-            <li>Node.js / Express</li>
-            <li> SQL</li>
-            <li>Git / GitHub / VS Code</li>
+            <li>Node.js</li>
+            <li>Express</li>
+            <li>PostgreSQL</li>
+            <li>Database Design / Management</li>
+            <li>Middleware Implementation</li>
+            
           </ul>
 
           {/* Section 3 */}
