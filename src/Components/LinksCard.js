@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { gsap } from "gsap";
 
-function BlueCard() {
+function LinksCard() {
   const boxRef = useRef();
 
   const handleHover = (hover) => {
@@ -14,7 +14,7 @@ function BlueCard() {
 
   return (
     <div
-      className="flip-card br d-flex flex-column blue-card-flip mobile-no-hover"
+      className="flip-card br d-flex flex-column bg-green-200  blue-card-flip mobile-no-hover"
       ref={boxRef}
       onMouseEnter={() => handleHover(true)}
       onMouseLeave={() => handleHover(false)}
@@ -29,9 +29,9 @@ function BlueCard() {
         }}
         
       >
-        <div className=" align-items-start font-normal justify-content-center text-lg text-white p-lg-4 p-3">
-          <span className="font-black">Alex Goode</span> is the owner of{" "}
-          <span className="font-black">Made Right Studio</span> in Columbia,
+        <div className=" align-items-start font-normal justify-content-center text-lg text-green-800  p-lg-4 p-3">
+          <span className="font-bold">Alex Goode</span> is the owner of{" "}
+          <span className="">Made Right Studio</span> in Columbia,
           South Carolina. Made Right is a Creative Web Design and Technology
           Studio that helps brands design, and develop top-performing websites.
           <h3 className="text-lg font-bold mb-2 mt-5">Links</h3>
@@ -54,11 +54,11 @@ function BlueCard() {
         }}
       >
         <h1 className="text-slate-900 text-4xl ">
-           <span className="text-blue-600">Made Right Studio</span> is currently an independently owned and operated business with hopes of creating more opportunities for growing the company into a small but mighty team.
+           <span className="text-green-700">Made Right Studio</span> is currently an independently owned and operated business with hopes of creating more opportunities for growing the company into a small but mighty team.
         </h1>
       </div>
     </div>
   );
 }
 
-export default BlueCard;
+export default LinksCard;

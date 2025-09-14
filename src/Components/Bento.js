@@ -2,7 +2,7 @@ import Image1 from "../Images//Screenshot.png";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import BlueCard from "./BlueCard"
+import LinksCard from "./LinksCard"
 import GreenCard from "./GreenCard";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -70,7 +70,7 @@ function Bento() {
 
       {/* Column 2: Black Box */}
       <div className="col-lg-6 col-12 px-lg-2 px-4 ">
-        <div className="flip-card-top d-flex flex-column items-stretch justify-center text-center bg-green-200 p-0">
+        <div className="flip-card-top d-flex flex-column items-stretch justify-center text-center bg-amber-200 p-0">
           <div className="flex flex-col flex-1 justify-center items-center h-full p-lg-5 p-2">
             <h2 className="text-4xl m-0">
               <a
@@ -80,11 +80,17 @@ function Bento() {
                 Made Right Studio
               </a>
             </h2>
-            <p className="text-xs m-0 mt-2  text-gray-800">
+            <p className="text-sm m-0 mt-2  text-gray-800">
               A Creative Web Design and Technology Studio
             </p>
             <button className="button-made-right mt-3">
-              Learn More
+                <a
+                href="https://maderight.netlify.app/"
+                className="text-dark no-underline "
+              >
+                Learn More
+              </a>
+
             </button>
 
           </div>
@@ -100,7 +106,7 @@ function Bento() {
 
       {/* Column 5: Image */}
       <div className="col-lg-6 col-12 px-lg-2 px-4 blue-card-container">
-        <BlueCard/>
+        <LinksCard/>
       </div>
 
       {/* Column 4: Black Box */}

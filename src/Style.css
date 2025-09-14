@@ -2,6 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+    font-family: 'EightiesComeback';
+    src: url('./Components/Fonts/EightiesComeback-LtSmCn.woff2') format('woff2'),
+    url('./Components/Fonts/EightiesComeback-LtSmCn.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+.eighties {
+  font-family: 'EightiesComeback', sans-serif;
+  font-weight: 300;
+}
+
 .font-bold{
     font-weight: 600;
 }
@@ -30,7 +44,7 @@
 }
 
 .bg-bento-blue{
-    background-color: #2D4D83;
+
     padding: 20px;
 
 }
