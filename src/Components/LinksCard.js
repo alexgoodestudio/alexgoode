@@ -54,7 +54,7 @@ function LinksCard() {
         }}
       >
         <h1 className="text-slate-900 text-4xl ">
-           <span className="text-green-700">Made Right Studio</span> is currently an independently owned and operated business with hopes of creating more opportunities for growing the company into a small but mighty team.
+           <span className="text-violet-500">Made Right Studio</span> is currently an independently owned and operated business with hopes of creating more opportunities for growing the company into a small but mighty team.
         </h1>
       </div>
     </div>

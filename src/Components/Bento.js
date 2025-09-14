@@ -124,7 +124,7 @@ function Bento() {
             <li>Props Management</li>
             <li>GSAP Animations</li>
             <li>Bootstrap/ Tailwind CSS </li>
-            <li>Git</li>
+            <li>Git Version Control</li>
           </ul>
 
           {/* Section 2 */}
@@ -133,9 +133,7 @@ function Bento() {
             <li>Node.js</li>
             <li>Express</li>
             <li>PostgreSQL</li>
-            <li>Database Design / Management</li>
-            <li>Middleware Implementation</li>
-            
+            <li>Database Design</li>                
           </ul>
 
           {/* Section 3 */}
