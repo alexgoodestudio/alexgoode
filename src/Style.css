@@ -36,11 +36,7 @@
     padding: 20px;
 }
 
-.bg-bento-blue{
 
-    padding: 20px;
-
-}
 
 
 .bg-box{
@@ -129,9 +125,9 @@ background-color: rgba(0, 0, 0, 0.075);
   align-items: center;
   justify-content: center;
   backface-visibility: hidden;
-  font-weight: bold;
+  font-weight:500;
   font-size: 1.2rem;
-  color: #000;
+
   transition: background-color 0.3s;
 }
 
@@ -151,6 +147,13 @@ background-color: rgba(0, 0, 0, 0.075);
   border-radius: 30px;
 }
 
+.card-top {
+  position: relative;
+  flex: 1;
+  height: 38vh;
+  border-radius: 30px;
+}
+
 /* Front and Back Faces */
 .flip-card-top .front,
 .flip-card-top .back {
@@ -162,7 +165,6 @@ background-color: rgba(0, 0, 0, 0.075);
   align-items: center;
   justify-content: center;
   backface-visibility: hidden;
-  font-weight: bold;
   font-size: 1.2rem;
   color: #000;
   transition: background-color 0.3s;
@@ -205,10 +207,13 @@ background-color: rgba(0, 0, 0, 0.075);
 
 /* Utility: responsive scaling for smaller screens */
 @media (max-width: 1200px) {
+  
   .flip-card-top {
-  min-height: 50dvh;
-
-}
+    min-height: 50dvh;
+  }
+  .card-top {
+    min-height: 50dvh;
+  }
   .text-12xl { font-size: 8rem; }
   .text-11xl { font-size: 6.5rem; }
   .text-10xl { font-size: 5.75rem; }
@@ -223,15 +228,14 @@ background-color: rgba(0, 0, 0, 0.075);
 }
 
 @media (max-width: 768px) {
-  .flip-card .front,
-  .flip-card .back {
 
-  min-height: 250dvh;
+  .flip-card-top {
+    min-height: 50dvh;
+  }
+  .card-top {
+    min-height: 50dvh;
+  }
 
-}
-.flip-card-top {
-  min-height: 250dvh;
-}
   .text-12xl { font-size: 6.5rem; }
   .text-11xl { font-size: 5.25rem; }
   .text-10xl { font-size: 4.5rem; }

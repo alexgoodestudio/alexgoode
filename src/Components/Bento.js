@@ -70,7 +70,7 @@ function Bento() {
 
       {/* Column 2: Black Box */}
       <div className="col-lg-6 col-12 px-lg-2 px-4 ">
-        <div className="flip-card-top d-flex flex-column items-stretch justify-center text-center bg-amber-200 p-0">
+        <div className="card-top d-flex flex-column items-stretch justify-center text-center bg-amber-200 p-0">
           <div className="flex flex-col flex-1 justify-center items-center h-full p-lg-5 p-2">
             <h2 className="text-4xl m-0">
               <a
@@ -105,7 +105,7 @@ function Bento() {
       </div>
 
       {/* Column 5: Image */}
-      <div className="col-lg-6 col-12 px-lg-2 px-4 blue-card-container">
+      <div className="col-lg-6 col-12 px-lg-2 px-4 ">
         <LinksCard/>
       </div>
 

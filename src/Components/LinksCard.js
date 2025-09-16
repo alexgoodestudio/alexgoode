@@ -22,25 +22,18 @@ function LinksCard() {
     >
       {/* Front */}
       <div
-        className="front br bg-bento-blue d-flex align-items-start justify-content-center p-lg-5 p-3"
+        className="front  d-flex align-items-start justify-content-center p-lg-5 p-3"
                 style={{
           height: "100%",
 
         }}
         
       >
-        <div className=" align-items-start font-normal justify-content-center text-lg text-green-800  p-lg-4 p-3">
-          <span className="font-bold">Alex Goode</span> is the owner of{" "}
-          <span className="">Made Right Studio</span> in Columbia,
+        <div className=" align-items-start justify-content-center text-4xl text-green-900  p-lg-4 p-3">
+          Owner of Made Right Studio in Columbia,
           South Carolina. Made Right is a Creative Web Design and Technology
           Studio that helps brands design, and develop top-performing websites.
-          <h3 className="text-lg font-bold mb-2 mt-5">Links</h3>
-          <ul className="list-disc list-inside mb-4">
-            <li>Linkedin</li>
-            <li>Github</li>
-            <li>Made Right</li>
-            <li>Instagram</li>
-          </ul>
+         
         </div>
       </div>
 
