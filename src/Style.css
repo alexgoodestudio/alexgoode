@@ -36,11 +36,11 @@
     padding: 20px;
 }
 
-.bg-bento-black{
+.bg-bento-black {
     background-color: #323232;
     border-radius: 30px;
     padding: 20px;
-
+    height: 50vh; 
 }
 
 .bg-bento-blue{
@@ -221,7 +221,7 @@ background-color: rgba(0, 0, 0, 0.075);
 
 @media (max-width: 768px) {
   .flip-card .front,
-.flip-card .back {
+  .flip-card .back {
 
   height: 50vh;
 

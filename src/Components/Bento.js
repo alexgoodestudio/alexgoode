@@ -113,11 +113,11 @@ function Bento() {
       <div className="col-lg-3 col-12 mb-lg-0 mb-3 px-lg-2 px-4 ">
         <div
           className="box bg-bento-black text-white p-lg-5 p-3"
-          style={{ height: "50vh" }}
+        
         >
           {/* Section 1 */}
-          <h3 className="text-lg font-bold mb-2">Frontend </h3>
-          <ul className="list-disc list-inside mb-4">
+          <h3 className="text-md font-bold mb-2">Frontend </h3>
+          <ul className="list-disc list-inside mb-4 text-md">
             <li>React.js</li>
             <li>REST API Development</li>
             <li>Component Architecture</li>
@@ -128,8 +128,8 @@ function Bento() {
           </ul>
 
           {/* Section 2 */}
-          <h3 className="text-lg font-bold mb-2">Backend & Tools </h3>
-          <ul className="list-disc list-inside">
+          <h3 className="text-md font-bold mb-2">Backend & Tools </h3>
+          <ul className="list-disc list-inside text-md">
             <li>Node.js</li>
             <li>Express</li>
             <li>PostgreSQL</li>
