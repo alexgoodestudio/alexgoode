@@ -116,7 +116,7 @@ function Bento() {
         
         >
           {/* Section 1 */}
-          <h3 className="text-md font-bold mb-2">Frontend...</h3>
+          <h3 className="text-md font-bold mb-2">Frontend</h3>
           <ul className="list-disc list-inside mb-4 text-md">
             <li>React.js</li>
             <li>REST API Development</li>

@@ -226,11 +226,11 @@ background-color: rgba(0, 0, 0, 0.075);
   .flip-card .front,
   .flip-card .back {
 
-  min-height: 50dvh;
+  min-height: 250dvh;
 
 }
 .flip-card-top {
-  min-height: 50dvh;
+  min-height: 250dvh;
 }
   .text-12xl { font-size: 6.5rem; }
   .text-11xl { font-size: 5.25rem; }
