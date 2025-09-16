@@ -25,7 +25,7 @@ function Nav() {
   }, [isOpen]);
 
   return (
-    <nav className="navbar navbar-light bg-slate-200 text-slate-800 flex flex-col">
+    <nav className="navbar navbar-light bg-slate-200 text-slate-900 flex flex-col">
       {/* Always visible header */}
       <div className="container-fluid d-flex justify-content-between align-items-center">
         <button className="navbar-brand btn btn-link p-0">
@@ -57,23 +57,40 @@ function Nav() {
         <div className="row mb-3">
           <div className="col-lg-4 col-12 p-3 text-start">
             <h5>
-              <a href="https://github.com/alexgoodestudio" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://github.com/alexgoodestudio"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sky-700 hover:text-sky-900 no-underline transition-colors duration-200"
+              >
                 Github
               </a>
             </h5>
             <p>Wanna see my work?</p>
           </div>
+
           <div className="col-lg-4 col-12 p-3 text-start">
             <h5>
-              <a href="https://www.linkedin.com/in/alexgoodestudio/" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://www.linkedin.com/in/alexgoodestudio/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sky-700 hover:text-sky-900 no-underline transition-colors duration-200"
+              >
                 LinkedIn
               </a>
             </h5>
             <p>Lets Connect</p>
           </div>
+
           <div className="col-lg-4 col-12 p-3 text-start">
             <h5>
-              <a href="https://maderight.netlify.app/" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://maderight.netlify.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sky-700 hover:text-sky-900 no-underline transition-colors duration-200"
+              >
                 Made Right Studio
               </a>
             </h5>
@@ -85,23 +102,40 @@ function Nav() {
         <div className="row mb-3">
           <div className="col-lg-4 col-12 p-3 text-start">
             <h5>
-              <a href="https://instagram.com/maderight.studio" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://instagram.com/maderight.studio"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sky-700 hover:text-sky-900 no-underline transition-colors duration-200"
+              >
                 Instagram
               </a>
             </h5>
             <p>See what I'm doing</p>
           </div>
+
           <div className="col-lg-4 col-12 p-3 text-start">
             <h5>
-              <a href="https://lemichclinic-front-end.onrender.com/" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://lemichclinic-front-end.onrender.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sky-700 hover:text-sky-900 no-underline transition-colors duration-200"
+              >
                 The Lemich Clinic
               </a>
             </h5>
             <p>Featured: Recent work</p>
           </div>
+
           <div className="col-lg-4 col-12 p-3 text-start">
             <h5>
-              <a href="https://rosewoodcleaning.netlify.app" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://rosewoodcleaning.netlify.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sky-700 hover:text-sky-900 no-underline transition-colors duration-200"
+              >
                 Rosewood Cleaning Services
               </a>
             </h5>
