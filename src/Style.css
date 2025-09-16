@@ -40,7 +40,8 @@
     background-color: #323232;
     border-radius: 30px;
     padding: 20px;
-    height: 50vh; 
+    min-height: 50dvh;   /* more stable on mobile */
+    box-sizing: border-box;
 }
 
 .bg-bento-blue{
