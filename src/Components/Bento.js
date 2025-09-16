@@ -112,11 +112,11 @@ function Bento() {
       {/* Column 4: Black Box */}
       <div className="col-lg-3 col-12 mb-lg-0 mb-3 px-lg-2 px-4 ">
         <div
-          className="box bg-teal-900 text-white p-5"
+          className="box teal-box bg-teal-900 text-white p-5"
         
         >
           {/* Section 1 */}
-          <h3 className="text-md font-bold mb-2">Frontend </h3>
+          <h3 className="text-md font-bold mb-2">Frontend... </h3>
           <ul className="list-disc list-inside mb-4 text-md">
             <li>React.js</li>
             <li>REST API Development</li>

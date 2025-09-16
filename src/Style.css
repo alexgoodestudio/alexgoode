@@ -36,13 +36,12 @@
     padding: 20px;
 }
 
-
-
 .bg-bento-blue{
 
     padding: 20px;
 
 }
+
 
 .bg-box{
     border-radius: 30px;
@@ -69,6 +68,14 @@ background-color: rgba(0, 0, 0, 0.075);
   border-radius: 30px;
   overflow: hidden;        /* Clips the image */
   position: relative;      /* Needed for absolute child */
+}
+
+.teal-box {
+  border-radius: 30px;
+  padding: 20px;
+  min-height: 50dvh;  /* dynamic vh fixes mobile shrinking */
+  height: auto;
+  box-sizing: border-box; /* include padding in height */
 }
 
 /*  */
