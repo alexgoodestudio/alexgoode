@@ -70,6 +70,7 @@ background-color: rgba(0, 0, 0, 0.075);
   position: relative;      /* Needed for absolute child */
 }
 
+
 .teal-box {
   border-radius: 30px;
   padding: 20px;
@@ -224,6 +225,11 @@ background-color: rgba(0, 0, 0, 0.075);
 @media (max-width: 768px) {
   .flip-card .front,
   .flip-card .back {
+
+  height: 50vh;
+
+}
+.flip-card-top {
 
   height: 50vh;
 
