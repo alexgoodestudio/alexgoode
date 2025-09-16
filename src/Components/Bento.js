@@ -112,7 +112,7 @@ function Bento() {
       {/* Column 4: Black Box */}
       <div className="col-lg-3 col-12 mb-lg-0 mb-3 px-lg-2 px-4 ">
         <div
-          className="box bg-bento-black text-white p-lg-5 p-3"
+          className="box bg-neutral-600 text-white p-lg-5 p-3"
         
         >
           {/* Section 1 */}
