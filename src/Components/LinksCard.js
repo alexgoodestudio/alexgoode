@@ -29,9 +29,9 @@ function LinksCard() {
         }}
         
       >
-        <div className=" align-items-start justify-content-center text-4xl text-green-900  p-lg-4 p-3">
+        <div className=" align-items-start justify-content-center text-3xl text-green-900  p-lg-4 p-3">
           Owner of Made Right Studio in Columbia,
-          South Carolina. Made Right is a Creative Web Design and Technology
+          South Carolina. A Creative Web Design and Technology
           Studio that helps brands design, and develop top-performing websites.
          
         </div>

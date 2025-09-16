@@ -76,6 +76,7 @@ background-color: rgba(0, 0, 0, 0.075);
 }
 
 
+
 /*  */
 .picture-mask {
   position: relative; /* for overlay */
@@ -174,7 +175,10 @@ background-color: rgba(0, 0, 0, 0.075);
 .flip-card-top .back {
   transform: rotateX(180deg);
 }
-
+.maderight{
+  font-size: 1.9rem;
+  font-weight: 600;
+}
 
 /* ===== Row 1: Creativity + Technology ===== */
 
@@ -208,12 +212,7 @@ background-color: rgba(0, 0, 0, 0.075);
 /* Utility: responsive scaling for smaller screens */
 @media (max-width: 1200px) {
   
-  .flip-card-top {
-    min-height: 50dvh;
-  }
-  .card-top {
-    min-height: 50dvh;
-  }
+
   .text-12xl { font-size: 8rem; }
   .text-11xl { font-size: 6.5rem; }
   .text-10xl { font-size: 5.75rem; }

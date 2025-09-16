@@ -70,18 +70,18 @@ function Bento() {
 
       {/* Column 2: Black Box */}
       <div className="col-lg-6 col-12 px-lg-2 px-4 ">
-        <div className="card-top d-flex flex-column items-stretch justify-center text-center bg-amber-200 p-0">
+        <div className="card-top d-flex flex-column items-stretch justify-center text-center bg-sky-100 p-0">
           <div className="flex flex-col flex-1 justify-center items-center h-full p-lg-5 p-2">
-            <h2 className="text-4xl m-0">
+            <h2 className="maderight m-0">
               <a
                 href="https://maderight.netlify.app/"
-                className="text-dark no-underline "
+                className="text-teal-900 no-underline "
               >
                 Made Right Studio
               </a>
             </h2>
-            <p className="text-sm m-0 mt-2  text-gray-800">
-              A Creative Web Design and Technology Studio
+            <p className="text-sm m-0 mt-2  text-teal-900">
+              Creative Web Design and Technology Studio
             </p>
             <button className="button-made-right mt-3">
                 <a
