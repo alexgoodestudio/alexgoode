@@ -41,20 +41,14 @@ function GreenCard() {
         repeat: -1,
         delay: 1
       }, "-=0.5")
-      // Delayed hint reveal
-      .fromTo(hintRef.current, 
-        { opacity: 0, y: 10 },
-        { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" },
-        "+=2"
-      )
-      // Rotate spinner inside the hint
+      // Rotate spinner inside the hint (start immediately)
       .to(iconRef.current, {
         rotation: 360,
         duration: 4,
         ease: "none",
         repeat: -1,
         delay: 0.5
-      }, "-=0.3");
+      }, "+=0.5");
     },
     { scope: containerRef }
   );
@@ -67,9 +61,8 @@ function GreenCard() {
       ease: "power2.inOut",
     });
     
-    // Counter-rotate the hint to keep it readable
+    // Hide the hint when flipped, show when back to front
     gsap.to(hintRef.current, {
-      rotateX: hover ? 180 : 0,
       opacity: hover ? 0 : 1,
       scale: hover ? 0.9 : 1,
       duration: 0.7,
@@ -130,46 +123,47 @@ function GreenCard() {
             Thinkful) Full-Stack Software Engineering Immersion Program.
           </h1>
         </div>
+      </div>
 
-        {/* Bottom Interaction Hint - Desktop Only, Front Side Only */}
+      {/* Bottom Interaction Hint - Desktop Only, positioned outside the flipping container */}
+      <div 
+        className="position-absolute d-none d-lg-block"
+        style={{ 
+          bottom: '1rem',
+          right: '1rem',
+          zIndex: 10,
+          pointerEvents: 'none' // Prevents interference with card hover
+        }}
+      >
         <div 
-          className="position-absolute d-none d-lg-block"
+          ref={hintRef}
+          className="d-inline-flex align-items-center px-3 py-1 bg-white border rounded-pill"
           style={{ 
-            bottom: '1rem',
-            right: '1rem',
-            zIndex: 10
+            opacity: 1, // Start visible instead of 0
+            borderColor: 'rgba(254, 240, 138, 0.4)'
           }}
         >
           <div 
-            ref={hintRef}
-            className="d-inline-flex align-items-center px-3 py-1 bg-white border rounded-pill"
+            ref={iconRef}
+            className="me-2 rotate-icon"
             style={{ 
-              opacity: 0,
-              borderColor: 'rgba(254, 240, 138, 0.4)'
+              width: '12px',
+              height: '12px',
+              border: '2px solid #fbbf24',
+              borderTop: '2px solid transparent',
+              borderRadius: '50%'
+            }}
+          />
+          <span 
+            className="fw-medium"
+            style={{ 
+              fontSize: '0.6875rem', 
+              letterSpacing: '0.025em',
+              color: '#92400e'
             }}
           >
-            <div 
-              ref={iconRef}
-              className="me-2 rotate-icon"
-              style={{ 
-                width: '12px',
-                height: '12px',
-                border: '2px solid #fbbf24',
-                borderTop: '2px solid transparent',
-                borderRadius: '50%'
-              }}
-            />
-            <span 
-              className="fw-medium"
-              style={{ 
-                fontSize: '0.6875rem', 
-                letterSpacing: '0.025em',
-                color: '#92400e'
-              }}
-            >
-              HOVER TO FLIP
-            </span>
-          </div>
+            HOVER TO FLIP
+          </span>
         </div>
       </div>
     </div>

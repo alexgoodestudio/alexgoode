@@ -26,20 +26,14 @@ function LinksCard() {
       repeat: -1,
       delay: 1
     })
-    // Delayed hint reveal
-    .fromTo(hintRef.current,
-      { opacity: 0, y: 10 },
-      { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" },
-      "+=2"
-    )
-    // Rotate icon animation loop
+    // Rotate icon animation loop (start immediately)
     .to(iconRef.current, {
       rotation: 360,
       duration: 4,
       ease: "none",
       repeat: -1,
       delay: 0.5
-    }, "-=0.3");
+    }, "+=0.5");
     
   }, { scope: containerRef });
 
@@ -102,41 +96,42 @@ function LinksCard() {
             <span className="text-violet-500">Made Right Studio</span> is currently an independently owned and operated business with hopes of growing the company into a small but mighty team.
           </h1>
         </div>
+      </div>
 
-        {/* Bottom Right Interaction Hint - Desktop Only */}
+      {/* Bottom Right Interaction Hint - Desktop Only, positioned outside the flipping container */}
+      <div 
+        className="position-absolute d-none d-lg-block"
+        style={{ 
+          bottom: '1rem',
+          right: '1rem',
+          zIndex: 10,
+          pointerEvents: 'none' // Prevents interference with card hover
+        }}
+      >
         <div 
-          className="position-absolute d-none d-lg-block"
+          ref={hintRef}
+          className="d-inline-flex align-items-center px-3 py-1 bg-white border rounded-pill"
           style={{ 
-            bottom: '1rem',
-            right: '1rem',
-            zIndex: 10
+            opacity: 1, // Start visible instead of 0
+            borderColor: 'rgba(22, 163, 74, 0.3)'
           }}
         >
-          <div 
-            ref={hintRef}
-            className="d-inline-flex align-items-center px-3 py-1 bg-white border rounded-pill"
+          <RotateCcw 
+            ref={iconRef}
+            size={12} 
+            className="me-2 text-green-700"
+            style={{ strokeWidth: 2 }}
+          />
+          <span 
+            className="fw-medium"
             style={{ 
-              opacity: 0,
-              borderColor: 'rgba(22, 163, 74, 0.3)'
+              fontSize: '0.6875rem', 
+              letterSpacing: '0.025em',
+              color: '#15803d'
             }}
           >
-            <RotateCcw 
-              ref={iconRef}
-              size={12} 
-              className="me-2 text-green-700"
-              style={{ strokeWidth: 2 }}
-            />
-            <span 
-              className="fw-medium"
-              style={{ 
-                fontSize: '0.6875rem', 
-                letterSpacing: '0.025em',
-                color: '#15803d'
-              }}
-            >
-              HOVER TO FLIP
-            </span>
-          </div>
+            HOVER TO FLIP
+          </span>
         </div>
       </div>
     </div>
