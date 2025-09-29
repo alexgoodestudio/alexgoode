@@ -29,7 +29,7 @@ function Nav() {
       {/* Always visible header */}
       <div className="container-fluid d-flex justify-content-between align-items-center">
         <button className="navbar-brand btn btn-link p-0">
-          <span className="font-bold">Alex Goode</span> | Made Right
+          <span className="font-bold ">Alex Goode</span> | Made Right
         </button>
         <button
           className="navbar-toggler d-block"
@@ -117,7 +117,7 @@ function Nav() {
           <div className="col-lg-4 col-12 p-3 text-start">
             <h5>
               <a
-                href="https://lemichclinic-front-end.onrender.com/"
+                href="https://lemichclinic.netlify.app/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-sky-700 hover:text-sky-900 no-underline transition-colors duration-200"
