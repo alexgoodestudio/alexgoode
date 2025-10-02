@@ -13,12 +13,8 @@ function LinksCard() {
   useGSAP(() => {
     const tl = gsap.timeline({ delay: 0.3 });
     
-    tl.fromTo(boxRef.current,
-      { opacity: 0, y: 20 },
-      { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" }
-    )
     // Subtle breathing animation to suggest interactivity
-    .to(boxRef.current, {
+    tl.to(boxRef.current, {
       scale: 1.015,
       duration: 3,
       ease: "power2.inOut",

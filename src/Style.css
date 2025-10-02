@@ -224,7 +224,7 @@
 .flip-card-top {
   position: relative;
   flex: 1;
-  height: 38vh;
+  height: 38svh;  /* ← Desktop: use svh instead of vh */
   transform-style: preserve-3d;
   cursor: pointer;
   border-radius: 30px;
@@ -310,9 +310,11 @@
 
 @media (max-width: 768px) {
 
+@media (max-width: 768px) {
   .flip-card-top {
-    min-height: 50dvh;
+    height: 50svh;  /* ← Change from min-height: 50dvh to height: 50svh */
   }
+}
   .card-top {
     min-height: 50dvh;
   }
