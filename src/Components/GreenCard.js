@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrambleTextPlugin } from "gsap/ScrambleTextPlugin";
+import { RotateCcw } from "lucide-react";
 
 gsap.registerPlugin(ScrambleTextPlugin);
 
@@ -41,7 +42,7 @@ function GreenCard() {
         repeat: -1,
         delay: 1
       }, "-=0.5")
-      // Rotate spinner inside the hint (start immediately)
+      // Rotate icon animation loop (start immediately)
       .to(iconRef.current, {
         rotation: 360,
         duration: 4,
@@ -61,12 +62,11 @@ function GreenCard() {
       ease: "power2.inOut",
     });
     
-    // Hide the hint when flipped, show when back to front
+    // Simply hide hint when hovering
     gsap.to(hintRef.current, {
       opacity: hover ? 0 : 1,
-      scale: hover ? 0.9 : 1,
-      duration: 0.7,
-      ease: "power2.inOut"
+      duration: 0.3,
+      ease: "power2.out"
     });
   };
 
@@ -132,34 +132,28 @@ function GreenCard() {
           bottom: '1rem',
           right: '1rem',
           zIndex: 10,
-          pointerEvents: 'none' // Prevents interference with card hover
+          pointerEvents: 'none'
         }}
       >
         <div 
           ref={hintRef}
           className="d-inline-flex align-items-center px-3 py-1 bg-white border rounded-pill"
           style={{ 
-            opacity: 1, // Start visible instead of 0
+            opacity: 1,
             borderColor: 'rgba(254, 240, 138, 0.4)'
           }}
         >
-          <div 
+          <RotateCcw 
             ref={iconRef}
-            className="me-2 rotate-icon"
-            style={{ 
-              width: '12px',
-              height: '12px',
-              border: '2px solid #fbbf24',
-              borderTop: '2px solid transparent',
-              borderRadius: '50%'
-            }}
+            size={12} 
+            className="me-2 text-green-700"
+            style={{ strokeWidth: 2 }}
           />
           <span 
-            className="fw-medium"
+            className="fw-medium text-green-700"
             style={{ 
               fontSize: '0.6875rem', 
-              letterSpacing: '0.025em',
-              color: '#92400e'
+              letterSpacing: '0.025em'
             }}
           >
             HOVER TO FLIP

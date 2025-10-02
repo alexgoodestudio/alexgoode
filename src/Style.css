@@ -237,6 +237,15 @@
   border-radius: 30px;
 }
 
+
+.spaced-underline {
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 6px;
+  display: inline-block;
+}
+
+
 /* Front and Back Faces */
 .flip-card-top .front,
 .flip-card-top .back {

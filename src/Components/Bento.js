@@ -76,7 +76,7 @@ function Bento() {
             <h2 className="maderight m-0">
               <a
                 href="https://maderight.netlify.app/"
-                className="text-teal-900 text-decoration-none"
+                className="text-teal-900 spaced-underline"
               >
                 Made Right Studio
               </a>
