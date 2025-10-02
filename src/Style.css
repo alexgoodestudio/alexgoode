@@ -312,7 +312,7 @@
   .flip-card-top {
     height: 50svh !important;  /* Try adding !important temporarily to test */
   }
-}
+
   .card-top {
     min-height: 50dvh;
   }
