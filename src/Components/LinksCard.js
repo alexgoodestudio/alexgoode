@@ -53,7 +53,10 @@ function LinksCard() {
   };
 
   return (
-    <div ref={containerRef} className="position-relative">
+    <div 
+      ref={containerRef} 
+      className="position-relative"
+    >
       <div
         className="flip-card br d-flex flex-column bg-green-200 blue-card-flip mobile-no-hover position-relative"
         ref={boxRef}
@@ -61,8 +64,7 @@ function LinksCard() {
         onMouseLeave={() => handleHover(false)}
         style={{ 
           cursor: 'pointer',
-          transformStyle: 'preserve-3d',
-          perspective: '1000px'
+          transformStyle: 'preserve-3d'
         }}
       >
         {/* Front */}
@@ -105,14 +107,14 @@ function LinksCard() {
           bottom: '1rem',
           right: '1rem',
           zIndex: 10,
-          pointerEvents: 'none' // Prevents interference with card hover
+          pointerEvents: 'none'
         }}
       >
         <div 
           ref={hintRef}
           className="d-inline-flex align-items-center px-3 py-1 bg-white border rounded-pill"
           style={{ 
-            opacity: 1, // Start visible instead of 0
+            opacity: 1,
             borderColor: 'rgba(22, 163, 74, 0.3)'
           }}
         >
