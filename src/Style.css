@@ -309,10 +309,8 @@
 }
 
 @media (max-width: 768px) {
-
-@media (max-width: 768px) {
   .flip-card-top {
-    height: 50svh;  /* ← Change from min-height: 50dvh to height: 50svh */
+    height: 50svh !important;  /* Try adding !important temporarily to test */
   }
 }
   .card-top {
