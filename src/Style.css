@@ -293,7 +293,6 @@
 
 /* Utility: responsive scaling for smaller screens */
 @media (max-width: 1200px) {
-  
 
   .text-12xl { font-size: 8rem; }
   .text-11xl { font-size: 6.5rem; }
@@ -314,7 +313,7 @@
   }
 
   .card-top {
-    min-height: 50dvh;
+    height: 50svh !important;  /* Try adding !important temporarily to test */
   }
 
   .text-12xl { font-size: 6.5rem; }
