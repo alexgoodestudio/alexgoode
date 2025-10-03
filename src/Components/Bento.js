@@ -126,17 +126,17 @@ function Bento() {
       </div>
 
       {/* Column 5: Skills Box */}
-      <div className="col-lg-3 col-12 mb-lg-0 mb-3 px-lg-2 px-4">
-        <div className="box teal-box bg-teal-900 text-white p-5">
+      <div className="col-lg-3 col-12 mb-lg-0 mb-3 px-lg-1 px-4 d-flex flex-column">
+        <div className="teal-box bg-teal-900 text-white p-4">
           <h3 className="text-md fw-bold mb-2">Frontend</h3>
           <ul className="list-disc list-inside mb-4 text-md">
             <li>React.js</li>
             <li>REST API Development</li>
             <li>Component Architecture</li>
             <li>Props/ State Management</li>
-            <li>GSAP Animations</li>
+            <li>Interaction Design</li>
             <li>Bootstrap/ Tailwind CSS</li>
-            <li>Git Version Control</li>
+
           </ul>
 
           <h3 className="text-md fw-bold mb-2">Backend & Tools</h3>
@@ -144,7 +144,6 @@ function Bento() {
             <li>Node.js</li>
             <li>Express</li>
             <li>PostgreSQL</li>
-            <li>Database Design</li>
           </ul>
         </div>
       </div>

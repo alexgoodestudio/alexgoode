@@ -1,7 +1,13 @@
+/* ============================================
+   TAILWIND BASE
+   ============================================ */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* ============================================
+   FONTS
+   ============================================ */
 @font-face {
     font-family: 'EightiesComeback';
     src: url('./Components/Fonts/EightiesComeback-LtSmCn.woff2') format('woff2'),
@@ -16,264 +22,17 @@
   font-weight: 300;
 }
 
-.font-bold{
+.font-bold {
     font-weight: 600;
 }
-.italics{
+
+.italics {
   font-style: italic;
 }
 
-
-.bg-bento-green{
-    background-color: #0A7C4B;
-    border-radius: 30px;
-    padding: 20px;
-}
-
-.bg-bento-white{
-    background-color: #ffffff;
-    border-radius: 30px;
-    padding: 20px;
-}
-
-
-
-
-.bg-box{
-    border-radius: 30px;
-    padding: 20px;
-
-}
-.button-made-right {
-  background-color: rgba(0, 0, 0, 0.075);
-  border-radius: .45rem;   
-  color: #000000;
-  padding: 0.5rem 1.5rem;
-  border: 2px solid rgba(0, 0, 0, 0.005); 
-  transition: background-color 0.3s ease, border-radius 4.5s ease;
-}
-
-.button-made-right:hover {
-  background-color: rgba(0, 0, 0, 0.2);
-  color: #000000;
-  border-radius: 50rem;
-}
-/* Breathing animation for interaction hint */
-@keyframes breathe {
-  0%, 100% { opacity: 0.8; transform: scale(1); }
-  50% { opacity: 1; transform: scale(1.2); }
-}
-
-/* 3D flip mechanics */
-.flip-card {
-  transform-style: preserve-3d;
-  perspective: 1000px;
-}
-
-.blue-card-flip {
-  cursor: pointer;
-  transition: transform 0.1s ease;
-}
-
-/* Mobile touch affordance */
-@media (hover: none) {
-  .mobile-no-hover::before {
-    position: absolute;
-    top: 1rem;
-    left: 1rem;
-    font-size: 0.75rem;
-    color: rgba(22, 101, 52, 0.8);
-    background: rgba(255, 255, 255, 0.9);
-    padding: 0.25rem 0.75rem;
-    border-radius: 1rem;
-    z-index: 10;
-  }
-}
-
-/* Performance optimizations */
-.back, .front {
-  will-change: transform;
-}
-/* Breathing animation for interaction hints */
-@keyframes breathe {
-  0%, 100% { opacity: 0.8; transform: scale(1); }
-  50% { opacity: 1; transform: scale(1.2); }
-}
-
-/* 3D flip mechanics for both cards */
-.flip-card-top, .flip-card {
-  transform-style: preserve-3d;
-  perspective: 1000px;
-}
-
-.green-card-flip, .blue-card-flip {
-  cursor: pointer;
-  transition: transform 0.1s ease;
-}
-
-/* Custom CSS rotate icon */
-.rotate-icon {
-  animation: spin 4s linear infinite;
-}
-
-@keyframes spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-/* Mobile touch affordance */
-@media (hover: none) {
-  .mobile-no-hover::before {
-    position: absolute;
-    top: 1rem;
-    left: 1rem;
-    font-size: 0.75rem;
-    background: rgba(255, 255, 255, 0.9);
-    padding: 0.25rem 0.75rem;
-    border-radius: 1rem;
-    z-index: 10;
-  }
-}
-
-/* Performance optimizations */
-.back, .front {
-  will-change: transform;
-  backface-visibility: hidden;
-}
-
-.box {
-  min-height: 50dvh;  /* dynamic vh fixes mobile shrinking */
-  border-radius: 30px;
-  overflow: hidden;        /* Clips the image */
-  position: relative;      /* Needed for absolute child */
-}
-
-
-.teal-box {
-  border-radius: 30px;
-  padding: 20px;
-  min-height: 50dvh;  /* dynamic vh fixes mobile shrinking */
-  height: auto;
-  box-sizing: border-box; /* include padding in height */
-}
-
-
-
-/*  */
-.picture-mask {
-  position: relative; /* for overlay */
-  overflow: hidden;
-  border-radius: 30px;
-}
-
-.picture-mask img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.7s ease; /* smooth zoom */
-}
-
-.picture-mask:hover img {
-  transform: scale(1.1);
-}
-
-/* ===== Flip Rows ===== */
-.flip-row {
-  display: flex;
-  gap: 1rem;
-  margin-bottom: 1rem; /* spacing between rows */
-}
-
-/* ===== Flip Cards ===== */
-.flip-card {
-  position: relative;
-  flex: 1;
-  min-height: 50dvh;
-  transform-style: preserve-3d;
-  cursor: pointer;
-  border-radius: 30px;
-}
-
-/* Front and Back Faces */
-.flip-card .front,
-.flip-card .back {
-  position: absolute;
-  width: 100%;
-  border-radius: 30px;
-  padding: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  backface-visibility: hidden;
-  font-weight:500;
-  font-size: 1.2rem;
-
-  transition: background-color 0.3s;
-}
-
-/* Back face rotation */
-.flip-card .back {
-  transform: rotateX(180deg);
-}
-
-
-/* ===== Top Flip Cards ===== */
-.flip-card-top {
-  position: relative;
-  flex: 1;
-  height: 38svh;  /* ← Desktop: use svh instead of vh */
-  transform-style: preserve-3d;
-  cursor: pointer;
-  border-radius: 30px;
-}
-
-.card-top {
-  position: relative;
-  flex: 1;
-  height: 38vh;
-  border-radius: 30px;
-}
-
-
-.spaced-underline {
-  text-decoration: none;
-  border-bottom: 1px solid currentColor;
-  padding-bottom: 6px;
-  display: inline-block;
-}
-
-
-/* Front and Back Faces */
-.flip-card-top .front,
-.flip-card-top .back {
-  position: absolute;
-  width: 100%;
-  border-radius: 30px;
-  padding: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  backface-visibility: hidden;
-  font-size: 1.2rem;
-  color: #000;
-  transition: background-color 0.3s;
-}
-
-/* Back face rotation */
-.flip-card-top .back {
-  transform: rotateX(180deg);
-}
-.maderight{
-  font-size: 2.16rem;
-  font-weight: 600;
-}
-
-/* ===== Row 1: Creativity + Technology ===== */
-
-/* ------------------------------    TEXT SIZE SYSTEM --------------------------------*/
+/* ============================================
+   TEXT SIZE SYSTEM
+   ============================================ */
 
 /* Headings */
 .text-12xl { font-size: 10rem; line-height: 1.05; } /* ~160px */
@@ -300,9 +59,244 @@
 .text-button { font-size: 0.875rem; font-weight: 600; }
 .text-caption { font-size: 0.75rem; font-weight: 400; }
 
-/* Utility: responsive scaling for smaller screens */
-@media (max-width: 1200px) {
+.maderight {
+  font-size: 2.16rem;
+  font-weight: 600;
+}
 
+/* ============================================
+   BACKGROUND & BOX STYLES
+   ============================================ */
+.bg-bento-green {
+    background-color: #0A7C4B;
+    border-radius: 30px;
+    padding: 20px;
+}
+
+.bg-bento-white {
+    background-color: #ffffff;
+    border-radius: 30px;
+    padding: 20px;
+}
+
+.bg-box {
+    border-radius: 30px;
+    padding: 20px;
+}
+
+.box {
+  min-height: 41dvh;  /* dynamic vh fixes mobile shrinking */
+  border-radius: 30px;
+  overflow: hidden;        /* Clips the image */
+  position: relative;      /* Needed for absolute child */
+}
+
+.teal-box {
+  border-radius: 30px;
+  padding: 20px;
+  height: 41svh;  /* ← Match desktop height */
+  box-sizing: border-box;
+  overflow-y: auto;  /* In case content overflows */
+}
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+.button-made-right {
+  background-color: rgba(0, 0, 0, 0.075);
+  border-radius: .45rem;   
+  color: #000000;
+  padding: 0.5rem 1.5rem;
+  border: 2px solid rgba(0, 0, 0, 0.005); 
+  transition: background-color 0.3s ease, border-radius 4.5s ease;
+}
+
+.button-made-right:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+  color: #000000;
+  border-radius: 50rem;
+}
+
+/* ============================================
+   FLIP CARDS
+   ============================================ */
+
+/* Flip Rows */
+.flip-row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem; /* spacing between rows */
+}
+
+/* Base Flip Card Styles */
+.flip-card, .flip-card-top {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.flip-card {
+  position: relative;
+  flex: 1;
+  min-height: 41dvh;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  border-radius: 30px;
+}
+
+.flip-card-top {
+  position: relative;
+  flex: 1;
+  height: 41svh;  /* Desktop: use svh instead of vh */
+  transform-style: preserve-3d;
+  cursor: pointer;
+  border-radius: 30px;
+}
+
+.card-top {
+  position: relative;
+  flex: 1;
+  height: 41vh;
+  border-radius: 30px;
+}
+
+/* Flip Card Interactions */
+.green-card-flip, .blue-card-flip {
+  cursor: pointer;
+  transition: transform 0.1s ease;
+}
+
+/* Front and Back Faces */
+.flip-card .front,
+.flip-card .back,
+.flip-card-top .front,
+.flip-card-top .back {
+  position: absolute;
+  width: 100%;
+  border-radius: 30px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backface-visibility: hidden;
+  font-size: 1.2rem;
+  transition: background-color 0.3s;
+}
+
+.flip-card .front,
+.flip-card .back {
+  font-weight: 500;
+}
+
+.flip-card-top .front,
+.flip-card-top .back {
+  color: #000;
+}
+
+/* Back face rotation */
+.flip-card .back,
+.flip-card-top .back {
+  transform: rotateX(180deg);
+}
+
+/* Performance optimizations */
+.back, .front {
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+/* ============================================
+   IMAGE EFFECTS
+   ============================================ */
+.picture-mask {
+  position: relative; /* for overlay */
+  overflow: hidden;
+  border-radius: 30px;
+}
+
+.picture-mask img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s ease; /* smooth zoom */
+}
+
+.picture-mask:hover img {
+  transform: scale(1.1);
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+.spaced-underline {
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 6px;
+  display: inline-block;
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+
+/* Breathing animation for interaction hints */
+@keyframes breathe {
+  0%, 100% { opacity: 0.8; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+/* Rotate icon animation */
+.rotate-icon {
+  animation: spin 4s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* ============================================
+   MOBILE STYLES & TOUCH INTERACTIONS
+   ============================================ */
+
+/* Mobile hover disable */
+:root {
+  --mobile-hover: auto;
+}
+
+.mobile-no-hover {
+  pointer-events: var(--mobile-hover, auto);
+}
+
+/* Mobile touch affordance */
+@media (hover: none) {
+  .mobile-no-hover::before {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    font-size: 0.75rem;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    z-index: 10;
+  }
+}
+
+/* Disable hover effects on touch devices */
+@media (hover: none) and (pointer: coarse) {
+  .mobile-no-hover:hover {
+    transform: none !important;
+  }
+}
+
+/* ============================================
+   RESPONSIVE BREAKPOINTS
+   ============================================ */
+
+/* Tablets & Small Desktops (max-width: 1200px) */
+@media (max-width: 1200px) {
   .text-12xl { font-size: 8rem; }
   .text-11xl { font-size: 6.5rem; }
   .text-10xl { font-size: 5.75rem; }
@@ -316,14 +310,19 @@
   .text-2xl  { font-size: 1.375rem; }
 }
 
+/* Tablets (max-width: 768px) */
 @media (max-width: 768px) {
   .flip-card-top {
-    height: 50svh !important;  /* Try adding !important temporarily to test */
+    height: 41svh !important;
   }
 
   .card-top {
-    height: 50svh !important;  /* Try adding !important temporarily to test */
+    height: 41svh !important;
   }
+   .teal-box {
+    height: 41svh !important;
+  }
+
 
   .text-12xl { font-size: 6.5rem; }
   .text-11xl { font-size: 5.25rem; }
@@ -340,6 +339,7 @@
   .text-lg   { font-size: 1rem; }
 }
 
+/* Mobile (max-width: 480px) */
 @media (max-width: 480px) {
   .text-12xl { font-size: 5rem; }
   .text-11xl { font-size: 4.25rem; }
@@ -358,23 +358,4 @@
   .text-md   { font-size: 0.8125rem; }
   .text-sm   { font-size: 0.75rem; }
   .text-xs   { font-size: 0.6875rem; }
-}
-
-
-
-/* Mobile hover disable styles */
-:root {
-  --mobile-hover: auto;
-}
-
-.mobile-no-hover {
-  pointer-events: var(--mobile-hover, auto);
-}
-
-/* Alternative approach using media queries if preferred */
-@media (hover: none) and (pointer: coarse) {
-  .mobile-no-hover:hover {
-    /* Disable all hover effects on touch devices */
-    transform: none !important;
-  }
 }

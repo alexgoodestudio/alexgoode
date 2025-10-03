@@ -7,8 +7,8 @@ import Banner from './Components/Banner';
 function App() {
   return (
     <div >
-      <Nav/>
       <Banner/>
+      <Nav/>
       <Dashboard/>
       <Footer/>
     </div>
