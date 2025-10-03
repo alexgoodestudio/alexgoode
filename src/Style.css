@@ -313,15 +313,24 @@
 /* Tablets (max-width: 768px) */
 @media (max-width: 768px) {
   .flip-card-top {
-    height: 41svh !important;
+    height: 50svh !important;
   }
+  .flip-card {
+  min-height: 50dvh;
+}
 
   .card-top {
-    height: 41svh !important;
+    height: 50svh !important;
   }
    .teal-box {
-    height: 41svh !important;
+    height: 50svh !important;
   }
+  .box {
+  height: 50dvh;  /* dynamic vh fixes mobile shrinking */}
+
+.teal-box {
+  height: 50svh;  /* ← Match desktop height */
+}
 
 
   .text-12xl { font-size: 6.5rem; }
