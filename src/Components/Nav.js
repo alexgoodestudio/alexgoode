@@ -25,7 +25,7 @@ function Nav() {
   }, [isOpen]);
 
   return (
-    <nav className="navbar navbar-light bg-slate-200 text-slate-900 flex flex-col">
+    <nav className="navbar navbar-light mb-lg-0 mb-4 bg-slate-200 text-slate-900 flex flex-col">
       {/* Always visible header */}
       <div className="container-fluid d-flex justify-content-between align-items-center">
         <button className="navbar-brand btn btn-link p-0">

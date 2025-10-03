@@ -51,10 +51,10 @@ function LinksCard() {
   return (
     <div 
       ref={containerRef} 
-      className="position-relative"
+      className="position-relative "
     >
       <div
-        className="flip-card br d-flex flex-column bg-green-200 blue-card-flip mobile-no-hover position-relative"
+        className="flip-card  br d-flex flex-column bg-green-200 blue-card-flip mobile-no-hover position-relative"
         ref={boxRef}
         onMouseEnter={() => handleHover(true)}
         onMouseLeave={() => handleHover(false)}
