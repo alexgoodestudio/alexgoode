@@ -61,7 +61,7 @@ function Nav() {
                 href="https://github.com/alexgoodestudio"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sky-700 hover:text-sky-900 no-underline transition-colors duration-200"
+                className="text-emerald-700 hover:text-emerald-900 no-underline transition-colors duration-200"
               >
                 Github
               </a>
@@ -75,7 +75,7 @@ function Nav() {
                 href="https://www.linkedin.com/in/alexgoodestudio/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sky-700 hover:text-sky-900 no-underline transition-colors duration-200"
+                className="text-emerald-700 hover:text-emerald-900 no-underline transition-colors duration-200"
               >
                 LinkedIn
               </a>
@@ -89,7 +89,7 @@ function Nav() {
                 href="https://maderight.netlify.app/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sky-700 hover:text-sky-900 no-underline transition-colors duration-200"
+                className="text-emerald-700 hover:text-emerald-900 no-underline transition-colors duration-200"
               >
                 Made Right Studio
               </a>
@@ -106,7 +106,7 @@ function Nav() {
                 href="https://instagram.com/maderight.studio"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sky-700 hover:text-sky-900 no-underline transition-colors duration-200"
+                className="text-emerald-700 hover:text-emerald-900 no-underline transition-colors duration-200"
               >
                 Instagram
               </a>
@@ -120,7 +120,7 @@ function Nav() {
                 href="https://lemichclinic.netlify.app/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sky-700 hover:text-sky-900 no-underline transition-colors duration-200"
+                className="text-emerald-700 hover:text-emerald-900 no-underline transition-colors duration-200"
               >
                 The Lemich Clinic
               </a>
@@ -134,7 +134,7 @@ function Nav() {
                 href="https://rosewoodcleaning.netlify.app"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sky-700 hover:text-sky-900 no-underline transition-colors duration-200"
+                className="text-emerald-700 hover:text-emerald-900 no-underline transition-colors duration-200"
               >
                 Rosewood Cleaning Services
               </a>

@@ -86,7 +86,7 @@ function Bento() {
             </p>
             <a
               href="https://maderight.netlify.app/"
-              className="btn mt-3 text-decoration-none fw-medium px-4 py-2"
+              className="btn mt-3  text-decoration-none fw-medium px-4 py-2"
               style={{ 
                 border: '1px solid #134e4a',
                 color: '#134e4a',
@@ -103,7 +103,7 @@ function Bento() {
                 e.target.style.color = '#134e4a';
               }}
             >
-              Learn More
+              <span className="font-mono">Learn More</span>
             </a>
           </div>
         </div>
