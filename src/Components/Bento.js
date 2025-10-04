@@ -121,9 +121,9 @@ function Bento() {
       </div>
 
       {/* Column 4: Links Card */}
-      <div className="col-lg-6 col-12 px-lg-2 px-4">
-        <LinksCard />
-      </div>
+<div className="col-lg-6 col-12 px-lg-2 px-4 blue-card-container">
+  <LinksCard />
+</div>
 
       {/* Column 5: Skills Box */}
       <div className="col-lg-3 col-12 mb-lg-0 mb-3 px-lg-1 px-4 d-flex flex-column">
