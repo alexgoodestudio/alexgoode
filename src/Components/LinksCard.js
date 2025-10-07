@@ -72,7 +72,7 @@ function LinksCard() {
             transform: "rotateX(0deg)"
           }}
         >
-          <div className="d-flex align-items-start justify-content-center text-4xl text-green-900 p-lg-4 p-3">
+          <div className="d-flex align-items-start justify-content-center text-4xl text-green-800 p-lg-4 p-3">
             Owner of Made Right Studio, a creative web design and technology
             studio that helps brands design, and develop top-performing websites.
           </div>
@@ -91,12 +91,11 @@ function LinksCard() {
           }}
         >
           <h1 className="text-slate-900 text-4xl">
-            <span className="text-violet-500">Made Right Studio</span> is currently an independently owned and operated business with hopes of growing the company into a small but mighty team.
+            <span className="text-violet-500">Made Right Studio</span> is currently an independently owned and operated business. We are moving into a new phase of growth where we aim to expand our team.
           </h1>
         </div>
       </div>
 
-      {/* Bottom Right Interaction Hint - Desktop Only, positioned outside the flipping container */}
       <div 
         className="position-absolute d-none d-lg-block"
         style={{ 

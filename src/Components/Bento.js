@@ -70,9 +70,9 @@ function Bento() {
       </div>
 
       {/* Column 2: Made Right Studio */}
-      <div className="col-lg-6 col-12 px-lg-2 px-4">
-        <div className="card-top d-flex flex-column items-stretch justify-center text-center bg-sky-100 p-0">
-          <div className="d-flex flex-column flex-fill justify-content-center align-items-center h-100 p-lg-5 p-2">
+      <div className="col-lg-6 col-12  px-lg-2 px-4">
+        <div className="card-top d-flex flex-column  items-stretch justify-center text-center bg-sky-100 p-0">
+          <div className="d-flex flex-column  flex-fill justify-content-center align-items-center h-100 p-lg-5 p-2">
             <h2 className="maderight m-0">
               <a
                 href="https://maderight.netlify.app/"
@@ -85,8 +85,8 @@ function Bento() {
               Creative Web Design and Technology Studio
             </p>
             <a
-              href="https://maderight.netlify.app/"
-              className="btn mt-3  text-decoration-none fw-medium px-4 py-2"
+            href="https://maderight.netlify.app/"
+              className="btn mt-3 text-decoration-none fw-medium px-4 py-2"
               style={{ 
                 border: '1px solid #134e4a',
                 color: '#134e4a',
@@ -95,12 +95,12 @@ function Bento() {
                 transition: 'all 0.3s ease'
               }}
               onMouseEnter={(e) => {
-                e.target.style.backgroundColor = '#134e4a';
-                e.target.style.color = '#ffffff';
+                e.currentTarget.style.backgroundColor = '#134e4a';  
+                e.currentTarget.style.color = '#ffffff';
               }}
               onMouseLeave={(e) => {
-                e.target.style.backgroundColor = 'transparent';
-                e.target.style.color = '#134e4a';
+                e.currentTarget.style.backgroundColor = 'transparent';  
+                e.currentTarget.style.color = '#134e4a';
               }}
             >
               <span className="font-mono">Learn More</span>
@@ -128,7 +128,7 @@ function Bento() {
       {/* Column 5: Skills Box */}
       <div className="col-lg-3 col-12 mb-lg-0 mb-3 px-lg-1 px-4 d-flex flex-column">
         <div className="teal-box bg-teal-900 text-white p-4">
-          <h3 className="text-md fw-bold mb-2">Frontend</h3>
+          <h3 className="text-md fw-bold mb-2" style={{ borderBottom: '1px solid rgba(255,255,255,0.2)' }}>Frontend</h3>
           <ul className="list-disc list-inside mb-4 text-md">
             <li>React.js</li>
             <li>REST API Development</li>
@@ -136,10 +136,9 @@ function Bento() {
             <li>Props/ State Management</li>
             <li>Interaction Design</li>
             <li>Bootstrap/ Tailwind CSS</li>
-
           </ul>
 
-          <h3 className="text-md fw-bold mb-2">Backend & Tools</h3>
+          <h3 className="text-md fw-bold mb-2" style={{ borderBottom: '1px solid rgba(255,255,255,0.2)' }}>Backend & Tools</h3>
           <ul className="list-disc list-inside text-md">
             <li>Node.js</li>
             <li>Express</li>
