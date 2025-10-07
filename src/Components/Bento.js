@@ -21,22 +21,23 @@ function Bento() {
       
       console.log('Setting up scroll triggers');
       
-      const greenCardTrigger = ScrollTrigger.create({
-        trigger: ".green-card-container + *",
-        start: "top 60%",
-        end: "bottom 10%",
-        onToggle: self => {
-          console.log('Green card trigger:', self.isActive);
-          const greenCard = document.querySelector('.green-card-flip');
-          if (greenCard) {
-            gsap.to(greenCard, {
-              rotateX: self.isActive ? 180 : 0,
-              duration: 0.7,
-              ease: "power2.inOut",
-            });
-          }
-        }
+const greenCardTrigger = ScrollTrigger.create({
+  trigger: ".green-card-container + *",
+  start: "top 60%",
+  end: "bottom 10%",
+  onToggle: self => {
+    console.log('Green card trigger:', self.isActive);
+    const greenCard = document.querySelector('.green-card-flip');
+    if (greenCard) {
+      gsap.to(greenCard, {
+        rotateX: self.isActive ? 180 : 0,
+        duration: 0.7,
+        ease: "power2.inOut",
+        overwrite: 'auto'  // Add this to prevent animation conflicts
       });
+    }
+  }
+});
 
       const blueCardTrigger = ScrollTrigger.create({
         trigger: ".blue-card-container",
@@ -50,6 +51,7 @@ function Bento() {
               rotateX: self.isActive ? 180 : 0,
               duration: 0.7,
               ease: "power2.inOut",
+              overwrite: 'auto'
             });
           }
         }
@@ -128,7 +130,7 @@ function Bento() {
       {/* Column 5: Skills Box */}
       <div className="col-lg-3 col-12 mb-lg-0 mb-3 px-lg-1 px-4 d-flex flex-column">
         <div className="teal-box bg-teal-900 text-white p-4">
-          <h3 className="text-md fw-bold mb-2" style={{ borderBottom: '1px solid rgba(255,255,255,0.2)' }}>Frontend</h3>
+          <h3 className="text-md fw-bold mb-2" style={{ borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '0.5rem' }}>Frontend</h3>
           <ul className="list-disc list-inside mb-4 text-md">
             <li>React.js</li>
             <li>REST API Development</li>
@@ -137,7 +139,7 @@ function Bento() {
             <li>Bootstrap/ Tailwind CSS</li>
           </ul>
 
-          <h3 className="text-md fw-bold mb-2" style={{ borderBottom: '1px solid rgba(255,255,255,0.1)' }}>Backend & Tools</h3>
+          <h3 className="text-md fw-bold mb-2" style={{ borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '0.5rem' }}>Backend & Tools</h3>
           <ul className="list-disc list-inside text-md">
             <li>Node.js</li>
             <li>Express</li>

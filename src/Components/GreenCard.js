@@ -71,7 +71,10 @@ function GreenCard() {
   };
 
   return (
-    <div ref={containerRef} className="position-relative">
+    <div 
+      ref={containerRef} 
+      className="position-relative"
+    >
       <div
         className="flip-card-top br d-flex flex-column mt-lg-0 mt-3 green-card-flip mobile-no-hover position-relative"
         ref={boxRef}
@@ -85,7 +88,7 @@ function GreenCard() {
       >
         {/* Front */}
         <div
-          className="front br bg-bento-green d-flex align-items-start justify-content-center p-lg-5 p-3"
+          className="front br bg-bento-green d-flex align-items-start justify-content-center p-lg-5 px-4 py-5"
           style={{ 
             height: "100%", 
             backfaceVisibility: "hidden",
@@ -106,7 +109,7 @@ function GreenCard() {
 
         {/* Back */}
         <div
-          className="back br d-flex align-items-start justify-content-center p-lg-5 p-3 position-absolute w-100"
+          className="back br d-flex align-items-start justify-content-center p-lg-5 p-lg-5 px-4 py-5 position-absolute w-100"
           style={{
             height: "100%",
             backgroundColor: "#f3f5ff",

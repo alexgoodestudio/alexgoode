@@ -65,14 +65,14 @@ function LinksCard() {
       >
         {/* Front */}
         <div
-          className="front d-flex align-items-start justify-content-center p-lg-5 p-3"
+          className="front d-flex align-items-start justify-content-center p-lg-5 px-4 py-5"
           style={{
             height: "100%",
             backfaceVisibility: "hidden",
             transform: "rotateX(0deg)"
           }}
         >
-          <div className="d-flex align-items-start justify-content-center text-4xl text-green-800 p-lg-4 p-3">
+          <div className="d-flex align-items-start justify-content-center text-4xl text-green-800 ">
             Owner of Made Right Studio, a creative web design and technology
             studio that helps brands design, and develop top-performing websites.
           </div>
@@ -80,7 +80,7 @@ function LinksCard() {
 
         {/* Back */}
         <div
-          className="back br d-flex align-items-start justify-content-center p-lg-4 p-3 position-absolute w-100"
+          className="back br d-flex align-items-start justify-content-center p-lg-5 px-4 py-5 position-absolute w-100"
           style={{
             height: "100%",
             backgroundColor: "#f3f5ff",
