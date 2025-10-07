@@ -132,17 +132,17 @@ function Bento() {
           <ul className="list-disc list-inside mb-4 text-md">
             <li>React.js</li>
             <li>REST API Development</li>
-            <li>Component Architecture</li>
             <li>Props/ State Management</li>
             <li>Interaction Design</li>
             <li>Bootstrap/ Tailwind CSS</li>
           </ul>
 
-          <h3 className="text-md fw-bold mb-2" style={{ borderBottom: '1px solid rgba(255,255,255,0.2)' }}>Backend & Tools</h3>
+          <h3 className="text-md fw-bold mb-2" style={{ borderBottom: '1px solid rgba(255,255,255,0.1)' }}>Backend & Tools</h3>
           <ul className="list-disc list-inside text-md">
             <li>Node.js</li>
             <li>Express</li>
-            <li>PostgreSQL</li>
+            <li>PostgreSQL</li> 
+            <li>Knex</li>
           </ul>
         </div>
       </div>

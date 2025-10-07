@@ -316,7 +316,7 @@
     height: 50svh !important;
   }
   .flip-card {
-  min-height: 50dvh;
+  min-height: 50dvh !important;
 }
 
   .card-top {
@@ -329,7 +329,7 @@
   height: 50dvh;  /* dynamic vh fixes mobile shrinking */}
 
 .teal-box {
-  height: 50svh;  /* ← Match desktop height */
+  height: 50svh !important;  /* ← Match desktop height */
 }
 
 
