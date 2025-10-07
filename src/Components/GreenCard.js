@@ -16,6 +16,7 @@ function GreenCard() {
   // Initial animations with progressive disclosure
   useGSAP(
     () => {
+      const isMobile = window.innerWidth <= 768 || 'ontouchstart' in window;
       const tl = gsap.timeline({ delay: 0.5 });
       
       // Scramble text animation
@@ -33,17 +34,20 @@ function GreenCard() {
           ease: "power2.out",
         }
       )
-      // Subtle breathing animation to suggest interactivity
-      .to(boxRef.current, {
-        scale: 1.015,
-        duration: 3,
-        ease: "power2.inOut",
-        yoyo: true,
-        repeat: -1,
-        delay: 1
-      }, "-=0.5")
-      // Rotate icon animation loop (start immediately)
-      .to(iconRef.current, {
+      // Only add breathing animation on desktop
+      if (!isMobile) {
+        tl.to(boxRef.current, {
+          scale: 1.015,
+          duration: 3,
+          ease: "power2.inOut",
+          yoyo: true,
+          repeat: -1,
+          delay: 1
+        }, "-=0.5");
+      }
+      
+      // Rotate icon animation loop
+      tl.to(iconRef.current, {
         rotation: 360,
         duration: 4,
         ease: "none",
@@ -54,15 +58,16 @@ function GreenCard() {
     { scope: containerRef }
   );
 
-  // Flip card hover logic
+  // Flip card hover logic (desktop only)
   const handleHover = (hover) => {
     gsap.to(boxRef.current, {
       rotateX: hover ? 180 : 0,
       duration: 0.7,
       ease: "power2.inOut",
+      transformOrigin: "center center",
+      overwrite: true
     });
     
-    // Simply hide hint when hovering
     gsap.to(hintRef.current, {
       opacity: hover ? 0 : 1,
       duration: 0.3,
@@ -83,7 +88,8 @@ function GreenCard() {
         style={{ 
           cursor: 'pointer',
           transformStyle: 'preserve-3d',
-          perspective: '1000px'
+          perspective: '1000px',
+          transformOrigin: 'center center'
         }}
       >
         {/* Front */}
@@ -128,7 +134,7 @@ function GreenCard() {
         </div>
       </div>
 
-      {/* Bottom Interaction Hint - Desktop Only, positioned outside the flipping container */}
+      {/* Bottom Interaction Hint - Desktop Only */}
       <div 
         className="position-absolute d-none d-lg-block"
         style={{ 
