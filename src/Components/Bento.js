@@ -21,23 +21,25 @@ function Bento() {
       
       console.log('Setting up scroll triggers');
       
-const greenCardTrigger = ScrollTrigger.create({
-  trigger: ".green-card-container + *",
-  start: "top 60%",
-  end: "bottom 10%",
-  onToggle: self => {
-    console.log('Green card trigger:', self.isActive);
-    const greenCard = document.querySelector('.green-card-flip');
-    if (greenCard) {
-      gsap.to(greenCard, {
-        rotateX: self.isActive ? 180 : 0,
-        duration: 0.7,
-        ease: "power2.inOut",
-        overwrite: 'auto'  // Add this to prevent animation conflicts
+      const greenCardTrigger = ScrollTrigger.create({
+        trigger: ".green-card-container + *",
+        start: "top 60%",
+        end: "bottom 10%",
+        onToggle: self => {
+          console.log('Green card trigger:', self.isActive);
+          const greenCard = document.querySelector('.green-card-flip');
+          if (greenCard) {
+            gsap.to(greenCard, {
+              rotateX: self.isActive ? 180 : 0,
+              duration: 0.7,
+              ease: "power2.inOut",
+              transformOrigin: "center center",
+              overwrite: true,  // Changed from 'auto' to true for cleaner overwrite
+              force3D: true     // Force GPU acceleration
+            });
+          }
+        }
       });
-    }
-  }
-});
 
       const blueCardTrigger = ScrollTrigger.create({
         trigger: ".blue-card-container",
@@ -51,7 +53,9 @@ const greenCardTrigger = ScrollTrigger.create({
               rotateX: self.isActive ? 180 : 0,
               duration: 0.7,
               ease: "power2.inOut",
-              overwrite: 'auto'
+              transformOrigin: "center center",
+              overwrite: true,
+              force3D: true
             });
           }
         }
@@ -123,9 +127,9 @@ const greenCardTrigger = ScrollTrigger.create({
       </div>
 
       {/* Column 4: Links Card */}
-<div className="col-lg-6 col-12 px-lg-2 px-4 blue-card-container">
-  <LinksCard />
-</div>
+      <div className="col-lg-6 col-12 px-lg-2 px-4 blue-card-container">
+        <LinksCard />
+      </div>
 
       {/* Column 5: Skills Box */}
       <div className="col-lg-3 col-12 mb-lg-0 mb-3 px-lg-1 px-4 d-flex flex-column">
