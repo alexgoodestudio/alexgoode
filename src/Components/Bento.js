@@ -85,7 +85,7 @@ function Bento() {
   return (
     <div ref={containerRef} className="row g-3 align-items-stretch">
       {/* Column 1: GreenCard flip */}
-      <div className="col-lg-6 col-12 px-lg-2 px-4 green-card-container">
+      <div className="col-lg-6 col-12 px-lg-2 px-4 mt-lg-3 mt-5 green-card-container">
         <GreenCard />
       </div>
 
