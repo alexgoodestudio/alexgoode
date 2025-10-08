@@ -88,7 +88,6 @@ function GreenCard() {
         style={{ 
           cursor: 'pointer',
           transformStyle: 'preserve-3d',
-          perspective: '1000px',
           transformOrigin: 'center center'
         }}
       >

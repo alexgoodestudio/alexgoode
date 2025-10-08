@@ -131,6 +131,9 @@
 /* Base Flip Card Styles */
 .flip-card, .flip-card-top {
   transform-style: preserve-3d;
+}
+
+.green-card-container, .blue-card-container {
   perspective: 1000px;
 }
 
@@ -316,25 +319,23 @@
 /* Tablets (max-width: 768px) */
 @media (max-width: 768px) {
   .flip-card-top {
-    height: 50svh !important;
+    height: 400px !important;
+    min-height: 400px !important;
   }
   .flip-card {
-  min-height: 50dvh !important;
-}
+    min-height: 400px !important;
+    height: 400px !important;
+  }
 
   .card-top {
-    height: 50svh !important;
+    height: 400px !important;
   }
-   .teal-box {
-    height: 50svh !important;
+  .teal-box {
+    height: 400px !important;
   }
   .box {
-  height: 50dvh;  /* dynamic vh fixes mobile shrinking */}
-
-.teal-box {
-  height: 50svh !important;  /* ← Match desktop height */
-}
-
+    height: 400px !important;
+  }
 
   .text-12xl { font-size: 6.5rem; }
   .text-11xl { font-size: 5.25rem; }

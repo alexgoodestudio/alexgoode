@@ -22,20 +22,34 @@ function Bento() {
       console.log('Setting up scroll triggers');
       
       const greenCardTrigger = ScrollTrigger.create({
-        trigger: ".green-card-container + *",
-        start: "top 60%",
-        end: "bottom 10%",
-        onToggle: self => {
-          console.log('Green card trigger:', self.isActive);
+        trigger: ".green-card-container",
+        start: "bottom 50%",
+        end: "bottom 30%",
+        onEnter: () => {
           const greenCard = document.querySelector('.green-card-flip');
           if (greenCard) {
+            gsap.killTweensOf(greenCard);
             gsap.to(greenCard, {
-              rotateX: self.isActive ? 180 : 0,
-              duration: 0.7,
+              rotateX: 180,
+              duration: 0.6,
               ease: "power2.inOut",
               transformOrigin: "center center",
-              overwrite: true,  // Changed from 'auto' to true for cleaner overwrite
-              force3D: true     // Force GPU acceleration
+              force3D: true,
+              immediateRender: false
+            });
+          }
+        },
+        onLeaveBack: () => {
+          const greenCard = document.querySelector('.green-card-flip');
+          if (greenCard) {
+            gsap.killTweensOf(greenCard);
+            gsap.to(greenCard, {
+              rotateX: 0,
+              duration: 0.6,
+              ease: "power2.inOut",
+              transformOrigin: "center center",
+              force3D: true,
+              immediateRender: false
             });
           }
         }
