@@ -72,8 +72,8 @@ function LinksCard() {
             transform: "rotateX(0deg)"
           }}
         >
-          <div className="align-items-start justify-content-center text-4xl text-emerald-700">
-            Owner of <span className="italics text-emerald-600">Made Right Studio</span>, a creative web design and technology
+          <div className="align-items-start justify-content-center text-4xl text-green-800">
+            Owner of <span className="">Made Right Studio</span>, a creative web design and technology
             studio that helps brands design, and develop top-performing websites.
           </div>
         </div>
