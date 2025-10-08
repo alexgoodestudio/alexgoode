@@ -23,8 +23,8 @@ function Bento() {
       
       const greenCardTrigger = ScrollTrigger.create({
         trigger: ".green-card-container",
-        start: "bottom 50%",
-        end: "bottom 30%",
+        start: "bottom 60%",
+        end: "bottom 40%",
         onEnter: () => {
           const greenCard = document.querySelector('.green-card-flip');
           if (greenCard) {
