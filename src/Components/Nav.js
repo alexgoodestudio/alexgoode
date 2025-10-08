@@ -49,7 +49,7 @@ function Nav() {
         <div className="row mb-3">
           <div className="col-12 text-start p-3">
             <h4>Links</h4>
-            <p>Check out my work, and other places you can find me!</p>
+            <p className="text-slate-500 font-mono text-sm">Check out my work, and other places you can find me.</p>
           </div>
         </div>
 
@@ -61,12 +61,12 @@ function Nav() {
                 href="https://github.com/alexgoodestudio"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-emerald-700 hover:text-emerald-900 no-underline transition-colors duration-200"
+                className="text-slate-950 hover:text-emerald-900 no-underline transition-colors duration-200"
               >
                 Github
               </a>
             </h5>
-            <p>Wanna see my work?</p>
+            <p className="text-slate-500 font-mono text-sm">my code</p>
           </div>
 
           <div className="col-lg-4 col-12 p-3 text-start">
@@ -75,12 +75,12 @@ function Nav() {
                 href="https://www.linkedin.com/in/alexgoodestudio/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-emerald-700 hover:text-emerald-900 no-underline transition-colors duration-200"
+                className="text-slate-950 hover:text-emerald-900 no-underline transition-colors duration-200"
               >
                 LinkedIn
               </a>
             </h5>
-            <p>Lets Connect</p>
+            <p className="text-slate-500 font-mono text-sm">Connect with me</p>
           </div>
 
           <div className="col-lg-4 col-12 p-3 text-start">
@@ -89,12 +89,12 @@ function Nav() {
                 href="https://maderight.netlify.app/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-emerald-700 hover:text-emerald-900 no-underline transition-colors duration-200"
+                className="text-slate-950 hover:text-emerald-900 no-underline transition-colors duration-200"
               >
                 Made Right Studio
               </a>
             </h5>
-            <p>Creative Web Design and Technology Studio</p>
+            <p className="text-slate-500 font-mono text-sm">Creative Web Design and Technology Studio</p>
           </div>
         </div>
 
@@ -106,12 +106,12 @@ function Nav() {
                 href="https://instagram.com/maderight.studio"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-emerald-700 hover:text-emerald-900 no-underline transition-colors duration-200"
+                className="text-slate-950 hover:text-emerald-900 no-underline transition-colors duration-200"
               >
                 Instagram
               </a>
             </h5>
-            <p>See what I'm doing</p>
+            <p className="text-slate-500 font-mono text-sm">Get to know me!</p>
           </div>
 
           <div className="col-lg-4 col-12 p-3 text-start">
@@ -120,12 +120,12 @@ function Nav() {
                 href="https://lemichclinic.netlify.app/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-emerald-700 hover:text-emerald-900 no-underline transition-colors duration-200"
+                className="text-slate-950 hover:text-emerald-900 no-underline transition-colors duration-200"
               >
                 The Lemich Clinic
               </a>
             </h5>
-            <p>Featured: Recent work</p>
+            <p className="text-slate-500 font-mono text-sm">Recent work</p>
           </div>
 
           <div className="col-lg-4 col-12 p-3 text-start">
@@ -134,12 +134,12 @@ function Nav() {
                 href="https://rosewoodcleaning.netlify.app"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-emerald-700 hover:text-emerald-900 no-underline transition-colors duration-200"
+                className="text-slate-950 hover:text-emerald-900 no-underline transition-colors duration-200"
               >
                 Rosewood Cleaning Services
               </a>
             </h5>
-            <p>Featured: Recent work</p>
+            <p className="text-slate-500 font-mono text-sm">Recent work</p>
           </div>
         </div>
       </div>
