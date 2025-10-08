@@ -54,7 +54,7 @@ function LinksCard() {
       className="position-relative "
     >
       <div
-        className="flip-card  br d-flex flex-column bg-green-200 blue-card-flip mobile-no-hover position-relative"
+        className="flip-card  br d-flex flex-column bg-green-100 blue-card-flip mobile-no-hover position-relative"
         ref={boxRef}
         onMouseEnter={() => handleHover(true)}
         onMouseLeave={() => handleHover(false)}
@@ -72,8 +72,8 @@ function LinksCard() {
             transform: "rotateX(0deg)"
           }}
         >
-          <div className="d-flex align-items-start justify-content-center text-4xl text-green-800 ">
-            Owner of Made Right Studio, a creative web design and technology
+          <div className="align-items-start justify-content-center text-4xl text-emerald-700">
+            Owner of <span className="italics text-emerald-600">Made Right Studio</span>, a creative web design and technology
             studio that helps brands design, and develop top-performing websites.
           </div>
         </div>
