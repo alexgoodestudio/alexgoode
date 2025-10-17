@@ -32,7 +32,7 @@ function Nav() {
           <span className="font-bold ">Alex Goode</span> | Made Right
         </button>
         <button
-          className="navbar-toggler d-block"
+          className="navbar-toggler  d-block"
           type="button"
           onClick={() => setIsOpen(!isOpen)}
         >
