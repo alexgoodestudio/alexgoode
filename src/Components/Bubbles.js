@@ -161,18 +161,18 @@ function Bubbles() {
         aria-hidden="true"
       />
 
-      <div className="position-relative" style={{ zIndex: 20 }}>
+      {/* <div className="position-relative" style={{ zIndex: 20 }}>
         <div className="container-fluid py-5">
           <div className="row justify-content-center py-5">
-            <div className="col-12 col-lg-7">
+            <div className="col-12 col-lg-4">
               <div className="form-container text-center">
-                <h1 className="text-slate-900 mb-3 eighties" style={{ fontSize: '4rem' }}>Web Design & Technology Studio</h1>
+                <h1 className="text-slate-900 mb-3 eighties" style={{ fontSize: '2rem' }}>Web Design & Technology Studio</h1>
                 <p className="fs-6 text-slate-600">Columbia, South Carolina</p>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

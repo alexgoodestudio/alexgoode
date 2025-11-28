@@ -99,7 +99,7 @@ function Nav() {
           <div className="col-lg-3 col-12 p-3 text-start">
             <h5>
               <a
-                href="https://maderight.netlify.app/"
+                href="https://maderight.studio/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-slate-950 hover:text-slate-600 no-underline transition-colors duration-200"
@@ -129,7 +129,7 @@ function Nav() {
 
         {/* Row 3 */}
         <div className="row mb-3">
-          <div className="col-lg-3 col-12 p-3 text-start">
+          {/* <div className="col-lg-3 col-12 p-3 text-start">
             <h5>
               <Link
                 to="/alexs-favs"
@@ -140,7 +140,7 @@ function Nav() {
               </Link>
             </h5>
             <p className="text-slate-500 font-mono text-sm">My favorite things</p>
-          </div>
+          </div> */}
 
           {/* <div className="col-lg-3 col-12 p-3 text-start">
             <h5>
@@ -154,7 +154,7 @@ function Nav() {
             </h5>
             <p className="text-slate-500 font-mono text-sm">My journey</p>
           </div> */}
-
+{/* 
           <div className="col-lg-3 col-12 p-3 text-start">
             <h5>
               <Link
@@ -166,7 +166,7 @@ function Nav() {
               </Link>
             </h5>
             <p className="text-slate-500 font-mono text-sm">Interactive experiments</p>
-          </div>
+          </div> */}
         </div>
       </div>
     </nav>
