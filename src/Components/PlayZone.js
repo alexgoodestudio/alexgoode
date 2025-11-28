@@ -1,5 +1,6 @@
 import CircleM from './CircleM';
 import Mission from './MR-Mission';
+import Bubbles from './Bubbles';
 
 function PlayZone() {
   return (
@@ -16,6 +17,7 @@ function PlayZone() {
           <div className="col-12">
             <Mission />
             <CircleM />
+            <Bubbles/>
           </div>
         </div>
       </div>

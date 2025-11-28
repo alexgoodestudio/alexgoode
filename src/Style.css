@@ -420,10 +420,9 @@
 
 /* Paragraph/container holding the words */
 .mission-body {
-  max-width: 78ch;
   margin: 0 auto;
-  padding: 18vh 4%;
-  font-size: 1.0625rem;
+  padding: 18vh 2%;
+  font-size: 1.4rem;
   line-height: 1.6;
 
   letter-spacing: 0.005em;
@@ -450,8 +449,15 @@
 }
 
 /* Persistent highlight for an inline phrase */
-.mission-body .highlight {
+.mission-body .highlight  {
   background-color: rgba(255, 247, 175, 0.6); /* #FFF7AF @ ~60% */
+  padding: 0 0.32rem;
+  border-radius: 0.28rem;
+  display: inline-block;
+}
+
+.mission-body .highlight-orange {
+  background-color: rgba(255, 219, 175, 0.6); /* #FFF7AF @ ~60% */
   padding: 0 0.32rem;
   border-radius: 0.28rem;
   display: inline-block;
@@ -483,10 +489,17 @@
 }
 
 /* Desktop: scale up text spacing and confetti visually */
+@media (min-width: 768px) {
+  .mission-p .mission-body {
+    padding: 18vh 3%;
+    font-size: 1.9rem;
+  }
+}
+
 @media (min-width: 1024px) {
   .mission-p .mission-body {
-    padding: 16vh 6%;
-    font-size: 1.125rem;
+    padding: 16vh 4%;
+    font-size: 2.3rem;
   }
   /* make confetti appear ~1.25x larger */
   .mission-p > .position-fixed,
@@ -498,9 +511,8 @@
 /* Very large screens: wider layout + larger text */
 @media (min-width: 1400px) {
   .mission-p .mission-body {
-    max-width: 92ch;
-    padding: 14vh 8%;
-    font-size: 1.1875rem;
+    padding: 12vh 5%;
+    font-size: 2.7rem;
   }
 }
 

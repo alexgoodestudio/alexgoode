@@ -12,6 +12,9 @@ function Mission() {
 
   // Create confetti pieces and store references for animation
   const createConfetti = () => {
+    // Ensure container exists
+    if (!confettiContainer.current) return;
+
     // Clear previous pieces
     confettiPieces.current.forEach(piece => piece.remove?.());
     confettiPieces.current = [];
@@ -53,18 +56,25 @@ function Mission() {
     // Create confetti timeline (initially paused)
     const confettiTl = gsap.timeline({ paused: true });
     
-    // Animate confetti pieces outward
+    // Build confetti timeline per piece:
+    // - ensure pieces start hidden at center
+    // - a short 'pop' to visible
+    // - explode outward while fading
     confettiPieces.current.forEach(({ element, xDest, yDest }) => {
+      confettiTl.set(element, { x: 0, y: 0, opacity: 0, scale: 0.85 }, 0);
+      // quick pop to visible
+      confettiTl.to(element, { opacity: 1, scale: 1, duration: 0.08, ease: 'power1.out' }, 0);
+      // explode outward
       confettiTl.to(
         element,
         {
           x: xDest,
           y: yDest,
           opacity: 0,
-          duration: 2,
+          duration: 1.9,
           ease: 'power2.out'
         },
-        0
+        0.08
       );
     });
 
@@ -78,11 +88,14 @@ function Mission() {
         pin: true,
         anticipatePin: 1,
         onUpdate: (self) => {
-          // Play confetti forward/reverse based on scroll progress
+          // Play confetti forward when near the end; soft reverse when scrolling back
           if (self.progress >= 0.95) {
             confettiTl.play();
           } else {
-            confettiTl.reverse();
+            // Soft reverse: let the timeline run backwards to reassemble then hide
+            if (confettiTl.isActive() || confettiTl.progress() > 0) {
+              confettiTl.reverse();
+            }
           }
         }
       },
@@ -123,7 +136,7 @@ function Mission() {
   const text = "Made Right is a design-focused web development studio based in Columbia, South Carolina. Our goal is to bring creativity and technology together to develop high-performing websites that showcases your brand. We focus on design principles, technical performance and purposeful strategy.";
 
   return (
-    <section className="bg-white gs mission-p py-5 text-start px-lg-0 px-1 position-relative">
+    <section className="bg-white gs mission-p py-5 text-start position-relative" style={{ marginLeft: 'calc(-50vw + 50%)', marginRight: 'calc(-50vw + 50%)' }}>
       <div ref={confettiContainer} className="position-fixed confetti-container" style={{ left: '50%', top: '50%', pointerEvents: 'none', zIndex: 9999 }} />
       <p ref={container} className="mission-body">
         {text.split(" ").map((word, i) => {
@@ -135,13 +148,18 @@ function Mission() {
           let specialClass = "";
 
           if (letters === "Made" || letters === "Right") {
-            colorClass = "text-sky-500 ";
+            colorClass = "text-blue-700 ";
             specialClass += " made-right";
           }
 
           // highlight the inline phrase (case-insensitive match)
           if (letters.toLowerCase() === "design-focused") {
             specialClass += " highlight";
+          }
+          
+          // highlight "web" and "development" with orange
+          if (letters.toLowerCase() === "web" || letters.toLowerCase() === "development") {
+            specialClass += " highlight-orange";
           }
 
           return (
