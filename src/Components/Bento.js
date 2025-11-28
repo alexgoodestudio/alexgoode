@@ -158,12 +158,20 @@ function Bento() {
           </ul>
 
           <h3 className="text-md fw-bold mb-2" style={{ borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '0.5rem' }}>Backend & Tools</h3>
-          <ul className="list-disc list-inside text-md">
-            <li>Node.js</li>
-            <li>Express</li>
-            <li>PostgreSQL</li> 
-            <li>Knex</li>
-          </ul>
+          <div className="d-flex gap-4">
+            <ul className="list-disc list-inside text-md mb-0">
+              <li>Node.js</li>
+              <li>Express</li>
+              <li>PostgreSQL</li>
+              <li>Knex</li>
+            </ul>
+            <ul className="list-disc list-inside text-md mb-0">
+              <li>Sanity</li>
+              <li>REST APIs</li>
+              <li>Headless CMS</li>
+              <li>Git</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>

@@ -17,6 +17,39 @@
     font-display: swap;
 }
 
+@font-face {
+    font-family: 'alpino';
+    src: url('./Components/Fonts/Alpino-Bold.ttf') format('woff2');
+    font-style: normal;
+    font-display: swap;
+}
+
+
+@font-face {
+  font-family: 'gs';
+  src: url('./Components/Fonts/GeneralSans-Regular.woff2') format('woff2');
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+    font-family: 'gambarino';
+    src: url('./Components/Fonts/Gambarino-Regular.woff2') format('woff2');
+    font-style: normal;
+    font-display: swap;
+}
+.gambarino{
+  font-family: 'gambarino', sans-serif;
+}
+
+.alpino{
+  font-family: 'alpino', sans-serif;
+}
+
+.gs {
+  font-family: 'gs', sans-serif;
+  font-display: block; 
+}
 
 .eighties {
   font-family: 'EightiesComeback', sans-serif;
@@ -372,4 +405,118 @@
   .text-md   { font-size: 0.8125rem; }
   .text-sm   { font-size: 0.75rem; }
   .text-xs   { font-size: 0.6875rem; }
+}
+
+/* ============================================
+   MISSION / CONFETTI STYLES (ADDED)
+   ============================================ */
+
+/* Section wrapper (apply to the <section> element) */
+.mission-p {
+  position: relative;
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Paragraph/container holding the words */
+.mission-body {
+  max-width: 78ch;
+  margin: 0 auto;
+  padding: 18vh 4%;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+
+  letter-spacing: 0.005em;
+  word-spacing: 0.05em;
+  text-align: start;
+}
+
+/* Word-level inline elements used by JS/GSAP */
+.mission-body .word {
+  display: inline-block;
+  white-space: nowrap;
+  vertical-align: middle;
+  letter-spacing: 0.005em;
+  transition: opacity 0.45s cubic-bezier(.2,.9,.3,1), transform 0.45s ease;
+}
+
+/* Spacing between adjacent word spans */
+.mission-body .word + .word { margin-left: 0.45rem; }
+
+/* Emphasized brand words (e.g., 'Made' 'Right') */
+.mission-body .made-right {
+  font-weight: 700;
+  opacity: 1;
+}
+
+/* Persistent highlight for an inline phrase */
+.mission-body .highlight {
+  background-color: rgba(255, 247, 175, 0.6); /* #FFF7AF @ ~60% */
+  padding: 0 0.32rem;
+  border-radius: 0.28rem;
+  display: inline-block;
+}
+
+/* Confetti container: original markup used a direct child position-fixed element
+   You can either use the `.position-fixed` element or a dedicated `.confetti-container`. */
+.mission-p > .position-fixed,
+.mission-p > .confetti-container {
+  left: 50% !important;
+  top: 50% !important;
+  transform: translate(-50%, -50%) scale(var(--confetti-scale, 1));
+  pointer-events: none;
+  z-index: 9999;
+  width: 0;
+  height: 0;
+  position: fixed !important; /* ensure it matches original JS insertion */
+}
+
+/* Confetti pieces created by JS (class: confetti-piece) */
+.mission-p .confetti-piece {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-radius: 4px;
+  will-change: transform, opacity;
+  box-shadow: 0 1px 2px rgba(12, 14, 23, 0.08);
+  transform-origin: 50% 50%;
+}
+
+/* Desktop: scale up text spacing and confetti visually */
+@media (min-width: 1024px) {
+  .mission-p .mission-body {
+    padding: 16vh 6%;
+    font-size: 1.125rem;
+  }
+  /* make confetti appear ~1.25x larger */
+  .mission-p > .position-fixed,
+  .mission-p > .confetti-container {
+    --confetti-scale: 1.25;
+  }
+}
+
+/* Very large screens: wider layout + larger text */
+@media (min-width: 1400px) {
+  .mission-p .mission-body {
+    max-width: 92ch;
+    padding: 14vh 8%;
+    font-size: 1.1875rem;
+  }
+}
+
+/* Mobile adjustments */
+@media (max-width: 767px) {
+  .mission-p .mission-body {
+    padding: 22vh 5%;
+    font-size: 0.98rem;
+  }
+  .mission-body .word + .word { margin-left: 0.28rem; }
+}
+
+/* Accessibility: hide confetti and remove transitions for reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .mission-body .word { transition: none; }
+  .mission-p > .position-fixed,
+  .mission-p > .confetti-container,
+  .mission-p .confetti-piece { display: none !important; }
 }

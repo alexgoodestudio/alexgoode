@@ -1,17 +1,28 @@
 import './Style.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Nav from './Components/Nav';
 import Dashboard from './Components/Dashboard';
 import Footer from './Components/Footer';
 import Banner from './Components/Banner';
+import AlexsFavs from './Components/AlexsFavs';
+import Story from './Components/Story';
+import PlayZone from './Components/PlayZone';
 
 function App() {
   return (
-    <div >
-      <Banner/>
-      <Nav/>
-      <Dashboard/>
-      <Footer/>
-    </div>
+    <Router>
+      <div>
+        <Banner/>
+        <Nav/>
+        <Routes>
+          <Route path="/" element={<Dashboard/>} />
+          <Route path="/alexs-favs" element={<AlexsFavs/>} />
+          <Route path="/story" element={<Story/>} />
+          <Route path="/play-zone" element={<PlayZone/>} />
+        </Routes>
+        <Footer/>
+      </div>
+    </Router>
   );
 }
 
