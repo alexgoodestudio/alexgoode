@@ -136,7 +136,7 @@ function Nav() {
                 className="text-slate-950 hover:text-slate-600 no-underline transition-colors duration-200"
                 onClick={closeNav}
               >
-                Alex's Favs
+                Alex's Free Favs
               </Link>
             </h5>
             <p className="text-slate-500 font-mono text-sm">My favorite things</p>
@@ -162,7 +162,7 @@ function Nav() {
                 className="text-slate-950 hover:text-slate-600 no-underline transition-colors duration-200"
                 onClick={closeNav}
               >
-                Play Zone
+                Motion Playground
               </Link>
             </h5>
             <p className="text-slate-500 font-mono text-sm">Interactive experiments</p>
