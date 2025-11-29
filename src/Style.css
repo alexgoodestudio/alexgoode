@@ -532,3 +532,355 @@
   .mission-p > .confetti-container,
   .mission-p .confetti-piece { display: none !important; }
 }
+
+
+
+/* ExpandableTextSection.css - Complete Rewrite */
+/* Made Right Studio - Expandable Text Section Component */
+
+/* Section Container - 100vh for laptops */
+.expandable-text-section {
+  background-color: #fafaf9;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+/* Expandable Columns Layout */
+.expandable-columns-wrapper {
+  display: flex;
+  gap: 0;
+  height: 100vh;
+  background: white;
+}
+
+/* Fixed Column (Non-expandable, Far Left) */
+.fixed-column {
+  flex: 0 0 405px;
+  background: white;
+  border-right: 1px solid #e7e5e4;
+  border-left: 1px solid #e7e5e4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.fixed-column-inner {
+  text-align: center;
+}
+
+.fixed-column-inner h2 {
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  margin-bottom: 1rem;
+}
+
+.fixed-column-inner p {
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+}
+
+/* Expandable Columns */
+.expandable-column {
+  position: relative;
+  background: white;
+  border-right: 1px solid #e7e5e4;
+  transition: flex 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  flex: 0 0 120px;
+}
+
+.expandable-column.expanded {
+  flex: 1 1 auto;
+}
+
+/* Column Trigger Button */
+.column-trigger {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 2;
+  transition: background-color 0.3s ease;
+  display: block;
+}
+
+.expandable-column.expanded .column-trigger {
+  position: relative;
+  height: auto;
+  padding: 2rem 2rem 0 2rem;
+  pointer-events: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+
+.column-trigger:hover {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+.expandable-column.expanded .column-trigger:hover {
+  background-color: transparent;
+}
+
+.column-trigger:focus-visible {
+  outline: 2px solid #d97706;
+  outline-offset: -4px;
+}
+
+/* Column Indicator - White circle with black stroke, filled when active */
+.column-indicator {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: white;
+  border: 2px solid #0f172a;
+  transition: background-color 0.3s ease;
+  flex-shrink: 0;
+  display: block;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.column-indicator.active {
+  background: #0f172a;
+}
+
+.expandable-column.expanded .column-indicator {
+  display: none;
+}
+
+/* Column Title - Uses Tailwind text classes, just styling layout */
+.column-title {
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  display: block;
+  white-space: nowrap;
+  position: absolute;
+  top: calc(25% + 10px + 1.5rem);
+  left: 50%;
+  transform: translateX(-50%) rotate(180deg);
+}
+
+/* Hover colors for each column - All unique colors */
+.expandable-column:nth-child(2):hover .column-title { color: #F2D4E5; } /* About: Soft pink */
+.expandable-column:nth-child(3):hover .column-title { color: #816281; } /* Mission: Muted plum */
+.expandable-column:nth-child(4):hover .column-title { color: #BB879D; } /* Tools: Dusty rose */
+.expandable-column:nth-child(5):hover .column-title { color: #0d9488; } /* Deliverables: Dark teal (tailwind teal-600) */
+.expandable-column:nth-child(6):hover .column-title { color: #A1ADEB; } /* Process: Soft periwinkle */
+.expandable-column:nth-child(7):hover .column-title { color: #eab308; } /* Design: Yellow (tailwind yellow-500) */
+.expandable-column:nth-child(8):hover .column-title { color: #c2410c; } /* Results: Terracotta */
+
+.expandable-column.expanded .column-title {
+  display: none;
+}
+
+/* Column Content */
+.column-content {
+  position: relative;
+  z-index: 1;
+  padding: 0 2rem 2rem 2rem;
+  opacity: 0;
+  display: none;
+  transition: opacity 0.3s ease;
+}
+
+.expandable-column.expanded .column-content {
+  opacity: 1;
+  display: block;
+}
+
+.column-inner {
+  max-width: 700px;
+}
+
+.column-inner h2 {
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.column-inner h2::before {
+  content: '';
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #0f172a;
+  border: 2px solid #0f172a;
+  flex-shrink: 0;
+}
+
+.column-inner h3 {
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.column-inner h3.text-xs {
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+.column-inner h3.text-2xl {
+  letter-spacing: -0.01em;
+}
+
+.column-inner p {
+  line-height: 1.6;
+  letter-spacing: -0.01em;
+  margin-bottom: 1.5rem;
+}
+
+/* Lists */
+.service-list,
+.press-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.service-list li,
+.press-list li {
+  line-height: 1.6;
+  letter-spacing: -0.005em;
+  margin-bottom: 0.5rem;
+}
+
+.press-list li {
+  margin-bottom: 0.75rem;
+}
+
+/* Links - Locomotive Style Hover */
+.inline-link {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.inline-link:hover {
+  color: #92400e;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .fixed-column {
+    flex: 0 0 280px;
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .expandable-text-section {
+    min-height: auto;
+  }
+
+  .expandable-columns-wrapper {
+    height: auto;
+    flex-wrap: wrap;
+  }
+
+  .fixed-column {
+    flex: 0 0 100%;
+    border-bottom: 1px solid #e7e5e4;
+    min-height: 150px;
+    border-left: none;
+  }
+
+  .expandable-column {
+    flex: 0 0 calc(33.333% - 2px);
+    min-height: 400px;
+  }
+
+  .expandable-column.expanded {
+    flex: 0 0 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .expandable-columns-wrapper {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .fixed-column {
+    flex: 0 0 auto;
+    border-right: none;
+    border-left: none;
+    min-height: 140px;
+    padding: 2rem 1.5rem;
+  }
+
+  .expandable-column {
+    border-right: none;
+    border-bottom: 1px solid #e7e5e4;
+    flex: 0 0 70px;
+    min-height: auto;
+  }
+
+  .expandable-column:last-child {
+    border-bottom: 1px solid #e7e5e4;
+  }
+
+  .expandable-column.expanded {
+    flex: 0 0 auto;
+    min-height: 300px;
+  }
+
+  .column-trigger {
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.25rem 1.5rem;
+  }
+
+  .expandable-column.expanded .column-trigger {
+    padding: 1.5rem 1.5rem 0 1.5rem;
+    flex-direction: row;
+  }
+
+  .column-title {
+    writing-mode: horizontal-tb;
+    position: static;
+    transform: none;
+    margin-top: 0;
+    font-size: 1.5rem;
+  }
+
+  .column-indicator {
+    position: static;
+    transform: none;
+    width: 16px;
+    height: 16px;
+  }
+
+  .column-content {
+    padding: 0 1.5rem 1.5rem 1.5rem;
+  }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  .expandable-column,
+  .column-content,
+  .column-trigger {
+    transition: none;
+  }
+}

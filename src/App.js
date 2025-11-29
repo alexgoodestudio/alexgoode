@@ -4,9 +4,10 @@ import Nav from './Components/Nav';
 import Dashboard from './Components/Dashboard';
 import Footer from './Components/Footer';
 import Banner from './Components/Banner';
-import AlexsFavs from './Components/AlexsFavs';
+import Expandable from './Components/Expandable';
 import Story from './Components/Story';
 import PlayZone from './Components/PlayZone';
+
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
         <Nav/>
         <Routes>
           <Route path="/" element={<Dashboard/>} />
-          <Route path="/alexs-favs" element={<AlexsFavs/>} />
+          <Route path="/expandable" element={<Expandable/>} />
           <Route path="/story" element={<Story/>} />
           <Route path="/play-zone" element={<PlayZone/>} />
         </Routes>

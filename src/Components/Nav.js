@@ -3,6 +3,37 @@ import { Link } from "react-router-dom";
 import { gsap } from "gsap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
+// Social Media Icon Components
+const GithubIcon = ({ size = 20 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
+    <path d="M9 18c-4.51 2-5-2-7-2" />
+  </svg>
+);
+
+const LinkedinIcon = ({ size = 20 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+    <rect width="4" height="12" x="2" y="9" />
+    <circle cx="4" cy="4" r="2" />
+  </svg>
+);
+
+const InstagramIcon = ({ size = 20 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+  </svg>
+);
+
+const FileIcon = ({ size = 20 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" />
+    <polyline points="14 2 14 8 20 8" />
+  </svg>
+);
+
 function Nav() {
   const [isOpen, setIsOpen] = useState(false);
   const navContentRef = useRef(null);
@@ -66,19 +97,33 @@ function Nav() {
 
         {/* Row 2 */}
         <div className="row mb-3">
+                    <div className="col-lg-3 col-12 p-3 text-start">
+            <h5>
+              <Link
+                to="/expandable"
+                className="text-slate-950 hover:text-slate-600 no-underline transition-colors duration-200 inline-flex items-center gap-2"
+                onClick={closeNav}
+              >
+                <FileIcon size={20} />
+                About Made Right
+              </Link>
+            </h5>
+            <p className="text-slate-500 font-mono text-sm">Creative Web Design and Technology Studio</p>
+          </div>
           <div className="col-lg-3 col-12 p-3 text-start">
             <h5>
               <a
                 href="https://github.com/alexgoodestudio"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-slate-950 hover:text-slate-600 no-underline transition-colors duration-200"
+                className="text-slate-950 hover:text-slate-600 no-underline transition-colors duration-200 inline-flex items-center gap-2"
                 onClick={closeNav}
               >
+                <GithubIcon size={20} />
                 Github
               </a>
             </h5>
-            <p className="text-slate-500 font-mono text-sm">my code</p>
+            <p className="text-slate-500 font-mono text-sm">View my work</p>
           </div>
 
           <div className="col-lg-3 col-12 p-3 text-start">
@@ -87,16 +132,17 @@ function Nav() {
                 href="https://www.linkedin.com/in/alexgoodestudio/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-slate-950 hover:text-slate-600 no-underline transition-colors duration-200"
+                className="text-slate-950 hover:text-slate-600 no-underline transition-colors duration-200 inline-flex items-center gap-2"
                 onClick={closeNav}
               >
+                <LinkedinIcon size={20} />
                 LinkedIn
               </a>
             </h5>
             <p className="text-slate-500 font-mono text-sm">Connect with me</p>
           </div>
 
-          <div className="col-lg-3 col-12 p-3 text-start">
+          {/* <div className="col-lg-3 col-12 p-3 text-start">
             <h5>
               <a
                 href="https://maderight.studio/"
@@ -109,7 +155,7 @@ function Nav() {
               </a>
             </h5>
             <p className="text-slate-500 font-mono text-sm">Creative Web Design and Technology Studio</p>
-          </div>
+          </div> */}
 
           <div className="col-lg-3 col-12 p-3 text-start">
             <h5>
@@ -117,30 +163,21 @@ function Nav() {
                 href="https://instagram.com/al3xgoode"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-slate-950 hover:text-slate-600 no-underline transition-colors duration-200"
+                className="text-slate-950 hover:text-slate-600 no-underline transition-colors duration-200 inline-flex items-center gap-2"
                 onClick={closeNav}
               >
+                <InstagramIcon size={20} />
                 Instagram
               </a>
             </h5>
             <p className="text-slate-500 font-mono text-sm">Get to know me!</p>
           </div>
+          
         </div>
 
         {/* Row 3 */}
         <div className="row mb-3">
-          {/* <div className="col-lg-3 col-12 p-3 text-start">
-            <h5>
-              <Link
-                to="/alexs-favs"
-                className="text-slate-950 hover:text-slate-600 no-underline transition-colors duration-200"
-                onClick={closeNav}
-              >
-                Alex's Free Favs
-              </Link>
-            </h5>
-            <p className="text-slate-500 font-mono text-sm">My favorite things</p>
-          </div> */}
+
 
           {/* <div className="col-lg-3 col-12 p-3 text-start">
             <h5>
