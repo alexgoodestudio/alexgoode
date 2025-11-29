@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 
@@ -8,8 +8,26 @@ const ExpandableColumn = ({ title, children, index, isExpanded, onExpand }) => {
 
   useGSAP(() => {
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    
-    if (prefersReducedMotion) {
+    const isMobile = window.innerWidth <= 768;
+
+    // On mobile, don't animate the column flex, only the content visibility
+    if (isMobile) {
+      if (isExpanded) {
+        gsap.to(contentRef.current, {
+          height: 'auto',
+          opacity: 1,
+          duration: 0.3,
+          ease: 'power2.out'
+        });
+      } else {
+        gsap.to(contentRef.current, {
+          height: 0,
+          opacity: 0,
+          duration: 0.3,
+          ease: 'power2.out'
+        });
+      }
+    } else if (prefersReducedMotion) {
       if (isExpanded) {
         gsap.set(columnRef.current, { flex: '1 1 auto' });
       } else {
@@ -73,6 +91,13 @@ const ExpandableColumn = ({ title, children, index, isExpanded, onExpand }) => {
 function ExpandableTextSection(){
   const [expandedColumn, setExpandedColumn] = useState(null);
 
+  // Set default expanded column based on screen size
+  useEffect(() => {
+    const isMobile = window.innerWidth <= 768;
+    // Mobile: About (1), Desktop: Mission (2)
+    setExpandedColumn(isMobile ? 1 : 2);
+  }, []);
+
   const handleExpand = (index) => {
     setExpandedColumn(expandedColumn === index ? null : index);
   };
@@ -111,9 +136,7 @@ function ExpandableTextSection(){
                   <h2 className="text-4xl text-slate-900">About Made Right</h2>
 
                   <p className="text-md text-slate-900">
-                    Made Right is a design-focused web development studio based in Columbia, South Carolina led by Alex Goode.
-                    We bring together creativity and technology to develop high-performing websites that
-                    showcase your brand and get found by the people who matter most to your business.
+                    Made Right is a design-focused web development studio based in Columbia, South Carolina led by Alex Goode. We bring together creativity and technology to develop high-performing websites that showcase your brand and get found by the people who matter most to your business.
                   </p>
 
                   <p className="text-md text-slate-900">
@@ -123,7 +146,7 @@ function ExpandableTextSection(){
                     vision with measurable outcomes.
                   </p>
 
-                  
+
                 </div>
               </ExpandableColumn>
 
@@ -137,18 +160,17 @@ function ExpandableTextSection(){
                   <h2 className="text-4xl text-slate-900">Our Mission</h2>
 
                   <p className="text-md text-slate-900">
-                    Made Right is a design-focused web development studio based in Columbia, South Carolina.
-                    Our goal is to bring creativity and technology together to develop high-performing
-                    websites that showcase your brand and get found.
+                    Made Right is a design-focused web development studio based in Columbia, South Carolina. We bring together creativity and technology to develop high-performing websites that showcase your brand and get found by the people who matter most to your business.
                   </p>
 
                   <p className="text-md text-slate-900">
-                    We focus on design principles that honor your brand's unique story, technical performance
-                    that ensures every visitor has a seamless experience, and purposeful strategy that aligns
-                    your digital presence with your business goals.
+                    Our approach centers on three essential principles: thoughtful design that reflects
+                    your unique identity, technical performance that ensures your site loads quickly and
+                    works beautifully across all devices, and purposeful strategy that connects your
+                    vision with measurable outcomes.
                   </p>
 
-                
+
                 </div>
               </ExpandableColumn>
 
@@ -244,19 +266,19 @@ function ExpandableTextSection(){
                   <h2 className="text-4xl text-slate-900">How We Work</h2>
 
                   <p className="text-md text-slate-900">
-                    Our process is collaborative. We guide you through each
-                    phase with clear communication and regular check-ins.
+                    Our process is designed to be collaborative and transparent. We work closely with you
+                    at every stage to ensure the final product exceeds expectations.
                   </p>
 
                   <div className="mt-4">
                     <h3 className="text-xs text-slate-900">OUR APPROACH</h3>
                     <ul className="service-list mt-3">
-                      <li className="text-base text-slate-900">Discovery & Research — Understanding your brand, goals, and audience</li>
-                      <li className="text-base text-slate-900">Strategy & Planning — Defining the project scope, features, and timeline</li>
-                      <li className="text-base text-slate-900">Design & Prototyping — Creating visual concepts and gathering your feedback</li>
-                      <li className="text-base text-slate-900">Development & Testing — Building your site with attention to detail</li>
-                      <li className="text-base text-slate-900">Launch & Training — Deploying your site and ensuring you feel confident managing it</li>
-                      <li className="text-base text-slate-900">Support & Growth — Providing ongoing assistance as your business evolves</li>
+                      <li className="text-base text-slate-900">Discovery & Research — Understanding your brand, audience, and goals</li>
+                      <li className="text-base text-slate-900">Strategy & Planning — Defining scope, timeline, and deliverables</li>
+                      <li className="text-base text-slate-900">Design & Prototyping — Creating visual concepts and gathering feedback</li>
+                      <li className="text-base text-slate-900">Development & Testing — Building and optimizing your website</li>
+                      <li className="text-base text-slate-900">Launch & Training — Deploying your site and training your team</li>
+                      <li className="text-base text-slate-900">Support & Growth — Ongoing maintenance and updates as needed</li>
                     </ul>
                   </div>
                 </div>

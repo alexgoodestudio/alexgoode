@@ -17,7 +17,7 @@ function App() {
         <Nav/>
         <Routes>
           <Route path="/" element={<Dashboard/>} />
-          <Route path="/expandable" element={<Expandable/>} />
+          <Route path="/maderight" element={<Expandable/>} />
           <Route path="/story" element={<Story/>} />
           <Route path="/play-zone" element={<PlayZone/>} />
         </Routes>

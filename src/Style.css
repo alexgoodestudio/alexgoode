@@ -829,33 +829,33 @@
   .expandable-column {
     border-right: none;
     border-bottom: 1px solid #e7e5e4;
-    flex: 0 0 70px;
+    flex: 0 0 auto;
     min-height: auto;
+    position: relative;
   }
 
   .expandable-column:last-child {
     border-bottom: 1px solid #e7e5e4;
   }
 
-  .expandable-column.expanded {
-    flex: 0 0 auto;
-    min-height: 300px;
-  }
-
+  /* Trigger takes full width and stays horizontal */
   .column-trigger {
-    padding: 0;
+    padding: 1.25rem 1.5rem;
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 1rem;
-    padding: 1.25rem 1.5rem;
+    position: relative;
+    height: auto;
   }
 
   .expandable-column.expanded .column-trigger {
-    padding: 1.5rem 1.5rem 0 1.5rem;
+    padding: 1.25rem 1.5rem;
     flex-direction: row;
+    pointer-events: auto;
   }
 
+  /* Title stays horizontal */
   .column-title {
     writing-mode: horizontal-tb;
     position: static;
@@ -864,6 +864,11 @@
     font-size: 1.5rem;
   }
 
+  .expandable-column.expanded .column-title {
+    display: block;
+  }
+
+  /* Indicator stays visible and changes when expanded */
   .column-indicator {
     position: static;
     transform: none;
@@ -871,8 +876,18 @@
     height: 16px;
   }
 
+  .expandable-column.expanded .column-indicator {
+    display: block;
+  }
+
+  /* Content appears below the trigger */
   .column-content {
     padding: 0 1.5rem 1.5rem 1.5rem;
+    display: none;
+  }
+
+  .expandable-column.expanded .column-content {
+    display: block;
   }
 }
 

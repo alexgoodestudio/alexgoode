@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import { Link } from "react-router-dom";
 import Image1 from "../Images//1-min.jpg";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -94,20 +95,20 @@ function Bento() {
         <div className="card-top d-flex flex-column  items-stretch justify-center text-center bg-sky-100 p-0">
           <div className="d-flex flex-column  flex-fill justify-content-center align-items-center h-100 p-lg-5 p-2">
             <h2 className="maderight m-0">
-              <a
-                href="https://maderight.netlify.app/"
+              <Link
+                to="/maderight"
                 className="text-teal-900 spaced-underline"
               >
                 Made Right Studio
-              </a>
+              </Link>
             </h2>
             <p className="text-sm m-0 mt-2 text-teal-900">
               Creative Web Design and Technology Studio
             </p>
-            <a
-            href="https://maderight.netlify.app/"
+            <Link
+              to="/maderight"
               className="btn mt-3 text-decoration-none fw-medium px-4 py-2"
-              style={{ 
+              style={{
                 border: '1px solid #134e4a',
                 color: '#134e4a',
                 backgroundColor: 'transparent',
@@ -115,16 +116,16 @@ function Bento() {
                 transition: 'all 0.3s ease'
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = '#134e4a';  
+                e.currentTarget.style.backgroundColor = '#134e4a';
                 e.currentTarget.style.color = '#ffffff';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = 'transparent';  
+                e.currentTarget.style.backgroundColor = 'transparent';
                 e.currentTarget.style.color = '#134e4a';
               }}
             >
               <span className="font-mono">Learn More</span>
-            </a>
+            </Link>
           </div>
         </div>
       </div>

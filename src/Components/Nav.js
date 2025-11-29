@@ -100,7 +100,7 @@ function Nav() {
                     <div className="col-lg-3 col-12 p-3 text-start">
             <h5>
               <Link
-                to="/expandable"
+                to="/maderight"
                 className="text-slate-950 hover:text-slate-600 no-underline transition-colors duration-200 inline-flex items-center gap-2"
                 onClick={closeNav}
               >
