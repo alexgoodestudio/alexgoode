@@ -7,6 +7,7 @@ import Banner from './Components/Banner';
 import Expandable from './Components/Expandable';
 import Story from './Components/Story';
 import PlayZone from './Components/PlayZone';
+import Marquee from './Components/Marquee';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
           <Route path="/story" element={<Story/>} />
           <Route path="/play-zone" element={<PlayZone/>} />
         </Routes>
+        <Marquee/>
         <Footer/>
       </div>
     </Router>

@@ -92,7 +92,7 @@
 /* Buttons / Small text */
 .text-button { font-size: 0.875rem; font-weight: 600; }
 .text-caption { font-size: 0.75rem; font-weight: 400; }
-
+.text-fixed { font-size: 4.15rem;  line-height: 1.2; }
 .maderight {
   font-size: 2.16rem;
   font-weight: 600;
@@ -344,6 +344,7 @@
   .text-8xl  { font-size: 4.25rem; }
   .text-7xl  { font-size: 3.75rem; }
   .text-6xl  { font-size: 3.5rem; }
+  .text-fixed{ font-size: 3.5rem; }
   .text-5xl  { font-size: 2.75rem; }
   .text-4xl  { font-size: 2rem; }
   .text-3xl  { font-size: 1.75rem; }
@@ -378,6 +379,7 @@
   .text-8xl  { font-size: 3.75rem; }
   .text-7xl  { font-size: 3.25rem; }
   .text-6xl  { font-size: 3rem; }
+  .text-fixed{ font-size: 3rem; }
   .text-5xl  { font-size: 2.25rem; }
   .text-4xl  { font-size: 1.875rem; }
   .text-3xl  { font-size: 1.5rem; }
@@ -395,6 +397,7 @@
   .text-8xl  { font-size: 3rem; }
   .text-7xl  { font-size: 2.5rem; }
   .text-6xl  { font-size: 2.5rem; }
+  .text-fixed{ font-size: 4rem; }
   .text-5xl  { font-size: 2rem; }
   .text-4xl  { font-size: 1.5rem; }
   .text-3xl  { font-size: 1.25rem; }
@@ -558,7 +561,6 @@
 /* Fixed Column (Non-expandable, Far Left) */
 .fixed-column {
   flex: 0 0 405px;
-  background: white;
   border-right: 1px solid #e7e5e4;
   border-left: 1px solid #e7e5e4;
   display: flex;
@@ -726,6 +728,15 @@
   flex-shrink: 0;
 }
 
+/* Color circles for each expanded section */
+.expandable-column:nth-child(2) .column-inner h2::before { background: #F2D4E5; border-color: #F2D4E5; } /* About: Soft pink */
+.expandable-column:nth-child(3) .column-inner h2::before { background: #816281; border-color: #816281; } /* Mission: Muted plum */
+.expandable-column:nth-child(4) .column-inner h2::before { background: #BB879D; border-color: #BB879D; } /* Tools: Dusty rose */
+.expandable-column:nth-child(5) .column-inner h2::before { background: #0d9488; border-color: #0d9488; } /* Deliverables: Dark teal */
+.expandable-column:nth-child(6) .column-inner h2::before { background: #A1ADEB; border-color: #A1ADEB; } /* Process: Soft periwinkle */
+.expandable-column:nth-child(7) .column-inner h2::before { background: #eab308; border-color: #eab308; } /* Design: Yellow */
+.expandable-column:nth-child(8) .column-inner h2::before { background: #c2410c; border-color: #c2410c; } /* Results: Terracotta */
+
 .column-inner h3 {
   font-weight: 600;
   line-height: 1.2;
@@ -813,17 +824,32 @@
 }
 
 @media (max-width: 768px) {
+  .expandable-text-section {
+    align-items: flex-start;
+    padding: 0;
+    margin: 0;
+  }
+
+  .expandable-section {
+    margin: 0;
+    padding: 0;
+  }
+
   .expandable-columns-wrapper {
     flex-direction: column;
     height: auto;
+    margin: 0;
+    padding: 0;
   }
 
   .fixed-column {
     flex: 0 0 auto;
     border-right: none;
     border-left: none;
+    border-top: none;
     min-height: 140px;
-    padding: 2rem 1.5rem;
+    padding: 1.5rem;
+    margin: 0;
   }
 
   .expandable-column {
@@ -865,7 +891,7 @@
   }
 
   .expandable-column.expanded .column-title {
-    display: block;
+    display: none;
   }
 
   /* Indicator stays visible and changes when expanded */
@@ -877,7 +903,7 @@
   }
 
   .expandable-column.expanded .column-indicator {
-    display: block;
+    display: none;
   }
 
   /* Content appears below the trigger */
@@ -898,4 +924,23 @@
   .column-trigger {
     transition: none;
   }
+}
+
+/* ============================================
+   MARQUEE / BANNER STYLES
+   ============================================ */
+.banner-container {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  padding: 1rem 0;
+  white-space: nowrap;
+}
+
+.banner-text {
+  display: inline-block;
+  font-size: 1.5rem;
+  font-weight: 600;
+  white-space: nowrap;
+  will-change: transform;
 }

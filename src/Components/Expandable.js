@@ -62,10 +62,12 @@ const ExpandableColumn = ({ title, children, index, isExpanded, onExpand }) => {
   }, [isExpanded]);
 
   return (
+   
     <div 
       ref={columnRef}
       className={`expandable-column ${isExpanded ? 'expanded' : 'collapsed'}`}
     >
+      
       <button
         onClick={onExpand}
         className="column-trigger"
@@ -104,25 +106,28 @@ function ExpandableTextSection(){
 
   return(
     <section className="expandable-text-section">
-      <div className="row">
+      
+      <div className="row m-0">
         <div className="col-12 p-0">
           <article className="expandable-section">
             <div className="expandable-columns-wrapper">
               
-              <div className="fixed-column">
+              <div className="fixed-column ">
                 <div className="fixed-column-inner">
-                  <h2 className="text-6xl text-slate-900 eighties">Made Right</h2>
-                  <p className="text-xs text-slate-600 px-4">
-                    High-Performing Design-First Websites in Columbia, South Carolina
+                  <h2 className="text-fixed text-slate-900 eighties">made right</h2>
+                  <p className="text-xs text-slate-600 ">
+                    Design-First Web Development in Columbia, SC
                   </p>
+                  <div className='pb-4'>
                   <a
                     href="https://maderight.studio"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-xs text-amber-700 hover:text-amber-900 transition-colors duration-200"
+                    className="text-md tracking-wider border bg-teal-700  px-3 py-2 rounded text-decoration-none text-white font-bold  hover:bg-teal-900 transition-colors duration-200"
                   >
-                    maderight.studio
+                    View Our Studio Site
                   </a>
+                  </div>
                 </div>
               </div>
 
@@ -132,19 +137,14 @@ function ExpandableTextSection(){
                 isExpanded={expandedColumn === 1}
                 onExpand={() => handleExpand(1)}
               >
-                <div className="column-inner">
-                  <h2 className="text-4xl text-slate-900">About Made Right</h2>
+                <div className="column-inner ">
+                  <h2 className="text-4xl text-slate-900">About</h2>
 
                   <p className="text-md text-slate-900">
-                    Made Right is a design-focused web development studio based in Columbia, South Carolina led by Alex Goode. We bring together creativity and technology to develop high-performing websites that showcase your brand and get found by the people who matter most to your business.
+                   Made Right Studio was started in April 2025 in Columbia, South Carolina by Alex Goode. After completing Promineo Tech's Front End Software Development Program and Thinkful's Full-Stack Software Engineering Immersion Program in 2023, combined with 4 years of graphic design experience, the goal was clear: build a design-first web development studio that helps small businesses stand out with fast, high-performing websites. We pride ourselves on combining design and development expertise with strategic SEO—using Next.js optimization, keyword analysis, metadata implementation, and other proven techniques to deliver sites that load faster, rank higher, and convert better.
                   </p>
 
-                  <p className="text-md text-slate-900">
-                    Our approach centers on three essential principles: thoughtful design that reflects
-                    your unique identity, technical performance that ensures your site loads quickly and
-                    works beautifully across all devices, and purposeful strategy that connects your
-                    vision with measurable outcomes.
-                  </p>
+                  
 
 
                 </div>
@@ -163,12 +163,7 @@ function ExpandableTextSection(){
                     Made Right is a design-focused web development studio based in Columbia, South Carolina. We bring together creativity and technology to develop high-performing websites that showcase your brand and get found by the people who matter most to your business.
                   </p>
 
-                  <p className="text-md text-slate-900">
-                    Our approach centers on three essential principles: thoughtful design that reflects
-                    your unique identity, technical performance that ensures your site loads quickly and
-                    works beautifully across all devices, and purposeful strategy that connects your
-                    vision with measurable outcomes.
-                  </p>
+
 
 
                 </div>
@@ -184,7 +179,7 @@ function ExpandableTextSection(){
                   <h2 className="text-4xl text-slate-900">Tools & Technology</h2>
 
                   <p className="text-md text-slate-900">
-                    We build with modern, proven technologies that ensure your website is fast,
+                    We build with industry standard technologies that ensure your website is fast,
                     secure, and maintainable for years to come.
                   </p>
 
@@ -229,14 +224,13 @@ function ExpandableTextSection(){
                   <h2 className="text-4xl text-slate-900">What You Receive</h2>
 
                   <p className="text-md text-slate-900">
-                    Every project is tailored to your specific needs, but our deliverables
-                    consistently include the essentials for a successful digital presence.
+                    Every project is based on your specific needs and goals.
                   </p>
 
                   <div className="mt-4">
                     <h3 className="text-xs text-slate-900">STANDARD DELIVERABLES</h3>
                     <ul className="service-list mt-3">
-                      <li className="text-base text-slate-900">Custom Website Design</li>
+                      <li className="text-base text-slate-900">Custom Website Design/ Development</li>
                       <li className="text-base text-slate-900">Responsive Development (Mobile, Tablet, Desktop)</li>
                       <li className="text-base text-slate-900">Content Management System</li>
                       <li className="text-base text-slate-900">SEO Optimization & Setup</li>
@@ -274,11 +268,10 @@ function ExpandableTextSection(){
                     <h3 className="text-xs text-slate-900">OUR APPROACH</h3>
                     <ul className="service-list mt-3">
                       <li className="text-base text-slate-900">Discovery & Research — Understanding your brand, audience, and goals</li>
-                      <li className="text-base text-slate-900">Strategy & Planning — Defining scope, timeline, and deliverables</li>
+                      <li className="text-base text-slate-900">Strategy & Planning — Defining project scope, timeline, and deliverables</li>
                       <li className="text-base text-slate-900">Design & Prototyping — Creating visual concepts and gathering feedback</li>
                       <li className="text-base text-slate-900">Development & Testing — Building and optimizing your website</li>
                       <li className="text-base text-slate-900">Launch & Training — Deploying your site and training your team</li>
-                      <li className="text-base text-slate-900">Support & Growth — Ongoing maintenance and updates as needed</li>
                     </ul>
                   </div>
                 </div>
@@ -294,12 +287,12 @@ function ExpandableTextSection(){
                   <h2 className="text-4xl text-slate-900">Design Systems</h2>
 
                   <p className="text-md text-slate-900">
-                    We build modular design systems that give your brand consistency across
-                    every touchpoint while making future updates seamless and cost-effective.
+                    We build modular design systems that give your brand consistency.
+                    
                   </p>
 
                   <p className="text-md text-slate-900">
-                    A design system is more than just a style guide—it's a living collection of
+                    A design system is a living collection of
                     reusable components, patterns, and guidelines that ensure your brand feels
                     cohesive whether someone encounters it on your website, social media, or
                     printed materials.
@@ -311,7 +304,6 @@ function ExpandableTextSection(){
                       <li className="text-base text-slate-900">Typography & Color Palettes</li>
                       <li className="text-base text-slate-900">Reusable Component Library</li>
                       <li className="text-base text-slate-900">Spacing & Layout Guidelines</li>
-                      <li className="text-base text-slate-900">Accessibility Standards</li>
                     </ul>
                   </div>
                 </div>

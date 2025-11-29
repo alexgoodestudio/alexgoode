@@ -25,7 +25,7 @@ function Bento() {
       const greenCardTrigger = ScrollTrigger.create({
         trigger: ".green-card-container",
         start: "bottom 60%",
-        end: "bottom 40%",
+        end: "bottom 20%",
         onEnter: () => {
           const greenCard = document.querySelector('.green-card-flip');
           if (greenCard) {
@@ -86,12 +86,12 @@ function Bento() {
   return (
     <div ref={containerRef} className="row g-3 align-items-stretch">
       {/* Column 1: GreenCard flip */}
-      <div className="col-lg-6 col-12 px-lg-2 px-4  green-card-container">
+      <div className="col-lg-6 col-12 px-lg-2 px-4 green-card-container">
         <GreenCard />
       </div>
 
       {/* Column 2: Made Right Studio */}
-      <div className="col-lg-6 col-12  px-lg-2 px-4">
+      <div className="col-lg-6 col-12 px-lg-2 px-4">
         <div className="card-top d-flex flex-column  items-stretch justify-center text-center bg-sky-100 p-0">
           <div className="d-flex flex-column  flex-fill justify-content-center align-items-center h-100 p-lg-5 p-2">
             <h2 className="maderight m-0">
@@ -133,9 +133,9 @@ function Bento() {
       {/* Column 3: Screenshot */}
       <div className="col-lg-3 col-12 px-lg-2 px-4 d-flex flex-column">
         <div className="box picture-mask bg-bento-black">
-          <img 
-            src={Image1} 
-            alt="Screenshot" 
+          <img
+            src={Image1}
+            alt="Screenshot"
             className="w-100 h-100 object-fit-cover"
           />
         </div>
