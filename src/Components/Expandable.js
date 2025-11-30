@@ -1,15 +1,69 @@
+'use client';
 import React, { useState, useRef, useEffect } from 'react';
+import { gsap } from 'gsap';
+import { useGSAP } from '@gsap/react';
 
 const ExpandableColumn = ({ title, children, index, isExpanded, onExpand }) => {
   const contentRef = useRef(null);
   const columnRef = useRef(null);
+  const isInitialMount = useRef(true);
+
+  useGSAP(() => {
+    const content = contentRef.current;
+    if (!content) return;
+
+    // Check for reduced motion preference
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (prefersReducedMotion) {
+      // Instant transitions for accessibility
+      gsap.set(content, {
+        opacity: isExpanded ? 1 : 0,
+        display: isExpanded ? 'block' : 'none'
+      });
+      return;
+    }
+
+    // On initial mount, set the state immediately without animation
+    if (isInitialMount.current) {
+      isInitialMount.current = false;
+      if (isExpanded) {
+        gsap.set(content, {
+          display: 'block',
+          opacity: 1,
+          y: 0
+        });
+      } else {
+        gsap.set(content, {
+          display: 'none',
+          opacity: 0,
+          y: 0
+        });
+      }
+      return;
+    }
+
+    if (isExpanded) {
+      // Smooth expand animation
+      gsap.set(content, { display: 'block', opacity: 0, y: 20 });
+      gsap.to(content, {
+        opacity: 1,
+        y: 0,
+        duration: 0.5,
+        ease: 'power2.out',
+      });
+    } else {
+      // Instant collapse to prevent flash
+      gsap.set(content, { display: 'none', opacity: 0, y: 0 });
+    }
+  }, { dependencies: [isExpanded], scope: columnRef });
 
   return (
     <div
       ref={columnRef}
       className={`expandable-column ${isExpanded ? 'expanded' : 'collapsed'}`}
     >
-      
+
       <button
         onClick={onExpand}
         className="column-trigger"
@@ -21,7 +75,7 @@ const ExpandableColumn = ({ title, children, index, isExpanded, onExpand }) => {
         <span className="column-title text-6xl  text-slate-900">{title}</span>
       </button>
 
-      <div 
+      <div
         ref={contentRef}
         id={`column-content-${index}`}
         className="column-content"
