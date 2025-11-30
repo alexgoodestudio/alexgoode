@@ -17,19 +17,30 @@ function Marquee() {
 
     // position text to start 1/3 across the screen
     const startPosition = containerWidth / 3;
-    gsap.set(el, { x: startPosition });
 
-    gsap.to(el, {
-      x: -textWidth - containerWidth,
-      duration: 70,
-      ease: "linear",
-      repeat: -1,
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: "top bottom", // animation starts when top of element hits bottom of viewport
-        end: "bottom top", // animation pauses when bottom of element hits top of viewport
-        toggleActions: "play pause resume pause",
-      },
+    // Initially hide the text
+    gsap.set(el, { x: startPosition, opacity: 0 });
+
+    // Create scroll trigger that starts animation when in view
+    ScrollTrigger.create({
+      trigger: containerRef.current,
+      start: "top bottom",
+      onEnter: () => {
+        // Fade in the text first
+        gsap.to(el, {
+          opacity: 1,
+          duration: 0.5,
+          onComplete: () => {
+            // Then start the scroll animation
+            gsap.to(el, {
+              x: -textWidth - containerWidth,
+              duration: 90,
+              ease: "linear",
+              repeat: -1,
+            });
+          }
+        });
+      }
     });
   });
 

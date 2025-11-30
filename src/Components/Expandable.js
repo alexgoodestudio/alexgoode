@@ -1,69 +1,11 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { useGSAP } from '@gsap/react';
-import gsap from 'gsap';
 
 const ExpandableColumn = ({ title, children, index, isExpanded, onExpand }) => {
   const contentRef = useRef(null);
   const columnRef = useRef(null);
 
-  useGSAP(() => {
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const isMobile = window.innerWidth <= 768;
-
-    // On mobile, don't animate the column flex, only the content visibility
-    if (isMobile) {
-      if (isExpanded) {
-        gsap.to(contentRef.current, {
-          height: 'auto',
-          opacity: 1,
-          duration: 0.3,
-          ease: 'power2.out'
-        });
-      } else {
-        gsap.to(contentRef.current, {
-          height: 0,
-          opacity: 0,
-          duration: 0.3,
-          ease: 'power2.out'
-        });
-      }
-    } else if (prefersReducedMotion) {
-      if (isExpanded) {
-        gsap.set(columnRef.current, { flex: '1 1 auto' });
-      } else {
-        gsap.set(columnRef.current, { flex: '0 0 120px' });
-      }
-    } else {
-      if (isExpanded) {
-        gsap.to(columnRef.current, {
-          flex: '1 1 auto',
-          duration: 0.5,
-          ease: 'power2.out'
-        });
-        gsap.to(contentRef.current, {
-          opacity: 1,
-          duration: 0.3,
-          delay: 0.2,
-          ease: 'power2.out'
-        });
-      } else {
-        gsap.to(columnRef.current, {
-          flex: '0 0 120px',
-          duration: 0.5,
-          ease: 'power2.out'
-        });
-        gsap.to(contentRef.current, {
-          opacity: 0,
-          duration: 0.2,
-          ease: 'power2.out'
-        });
-      }
-    }
-  }, [isExpanded]);
-
   return (
-   
-    <div 
+    <div
       ref={columnRef}
       className={`expandable-column ${isExpanded ? 'expanded' : 'collapsed'}`}
     >
@@ -112,10 +54,10 @@ function ExpandableTextSection(){
           <article className="expandable-section">
             <div className="expandable-columns-wrapper">
               
-              <div className="fixed-column ">
+              <div className="fixed-column bg-teal-100">
                 <div className="fixed-column-inner">
                   <h2 className="text-fixed text-slate-900 eighties">made right</h2>
-                  <p className="text-xs text-slate-600 ">
+                  <p className="font-semibold text-xs text-slate-600 pb-4">
                     Design-First Web Development in Columbia, SC
                   </p>
                   <div className='pb-4'>
@@ -123,9 +65,9 @@ function ExpandableTextSection(){
                     href="https://maderight.studio"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-md tracking-wider border bg-teal-700  px-3 py-2 rounded text-decoration-none text-white font-bold  hover:bg-teal-900 transition-colors duration-200"
+                    className="text-md tracking-wider  bg-teal-700  px-3 py-3 rounded  text-decoration-none text-white font-bold  hover:bg-teal-900 transition-colors duration-200"
                   >
-                    View Our Studio Site
+                    View Our Studio 
                   </a>
                   </div>
                 </div>
@@ -140,7 +82,7 @@ function ExpandableTextSection(){
                 <div className="column-inner ">
                   <h2 className="text-4xl text-slate-900">About</h2>
 
-                  <p className="text-md text-slate-900">
+                  <p className="font-semibold text-md text-slate-900">
                    Made Right Studio was started in April 2025 in Columbia, South Carolina by Alex Goode. After completing Promineo Tech's Front End Software Development Program and Thinkful's Full-Stack Software Engineering Immersion Program in 2023, combined with 4 years of graphic design experience, the goal was clear: build a design-first web development studio that helps small businesses stand out with fast, high-performing websites. We pride ourselves on combining design and development expertise with strategic SEO—using Next.js optimization, keyword analysis, metadata implementation, and other proven techniques to deliver sites that load faster, rank higher, and convert better.
                   </p>
 
@@ -159,7 +101,7 @@ function ExpandableTextSection(){
                 <div className="column-inner">
                   <h2 className="text-4xl text-slate-900">Our Mission</h2>
 
-                  <p className="text-md text-slate-900">
+                  <p className="font-semibold text-md text-slate-900">
                     Made Right is a design-focused web development studio based in Columbia, South Carolina. We bring together creativity and technology to develop high-performing websites that showcase your brand and get found by the people who matter most to your business.
                   </p>
 
@@ -178,13 +120,13 @@ function ExpandableTextSection(){
                 <div className="column-inner">
                   <h2 className="text-4xl text-slate-900">Tools & Technology</h2>
 
-                  <p className="text-md text-slate-900">
+                  <p className="font-semibold text-md text-slate-900">
                     We build with industry standard technologies that ensure your website is fast,
                     secure, and maintainable for years to come.
                   </p>
 
                   <div className="mt-4">
-                    <h3 className="text-xs text-slate-900">DEVELOPMENT</h3>
+                    <h3 className="text-xs font-bold underline text-slate-900">DEVELOPMENT</h3>
                     <div className="row mt-3">
                       <div className="col-md-6">
                         <ul className="service-list">
@@ -203,7 +145,7 @@ function ExpandableTextSection(){
                   </div>
 
                   <div className="mt-4">
-                    <h3 className="text-xs text-slate-900">OPTIMIZATION</h3>
+                    <h3 className="text-xs font-bold underline text-slate-900">OPTIMIZATION</h3>
                     <ul className="service-list mt-3">
                       <li className="text-base text-slate-900">Search Engine Optimization (SEO)</li>
                       <li className="text-base text-slate-900">Performance & Speed Testing</li>
@@ -223,12 +165,12 @@ function ExpandableTextSection(){
                 <div className="column-inner">
                   <h2 className="text-4xl text-slate-900">What You Receive</h2>
 
-                  <p className="text-md text-slate-900">
+                  <p className="font-semibold text-md text-slate-900">
                     Every project is based on your specific needs and goals.
                   </p>
 
                   <div className="mt-4">
-                    <h3 className="text-xs text-slate-900">STANDARD DELIVERABLES</h3>
+                    <h3 className="text-xs font-bold underline text-slate-900">STANDARD DELIVERABLES</h3>
                     <ul className="service-list mt-3">
                       <li className="text-base text-slate-900">Custom Website Design/ Development</li>
                       <li className="text-base text-slate-900">Responsive Development (Mobile, Tablet, Desktop)</li>
@@ -240,7 +182,7 @@ function ExpandableTextSection(){
                   </div>
 
                   <div className="mt-4">
-                    <h3 className="text-xs text-slate-900">OPTIONAL ADDITIONS</h3>
+                    <h3 className="text-xs font-bold underline text-slate-900">OPTIONAL ADDITIONS</h3>
                     <ul className="service-list mt-3">
                       <li className="text-base text-slate-900">E-commerce Integration</li>
                       <li className="text-base text-slate-900">Animation & Interaction Design</li>
@@ -259,13 +201,13 @@ function ExpandableTextSection(){
                 <div className="column-inner">
                   <h2 className="text-4xl text-slate-900">How We Work</h2>
 
-                  <p className="text-md text-slate-900">
+                  <p className="font-semibold text-md text-slate-900">
                     Our process is designed to be collaborative and transparent. We work closely with you
                     at every stage to ensure the final product exceeds expectations.
                   </p>
 
                   <div className="mt-4">
-                    <h3 className="text-xs text-slate-900">OUR APPROACH</h3>
+                    <h3 className="text-xs font-bold underline text-slate-900">OUR APPROACH</h3>
                     <ul className="service-list mt-3">
                       <li className="text-base text-slate-900">Discovery & Research — Understanding your brand, audience, and goals</li>
                       <li className="text-base text-slate-900">Strategy & Planning — Defining project scope, timeline, and deliverables</li>
@@ -286,12 +228,12 @@ function ExpandableTextSection(){
                 <div className="column-inner">
                   <h2 className="text-4xl text-slate-900">Design Systems</h2>
 
-                  <p className="text-md text-slate-900">
+                  <p className="font-semibold text-md text-slate-900">
                     We build modular design systems that give your brand consistency.
                     
                   </p>
 
-                  <p className="text-md text-slate-900">
+                  <p className="font-semibold text-md text-slate-900">
                     A design system is a living collection of
                     reusable components, patterns, and guidelines that ensure your brand feels
                     cohesive whether someone encounters it on your website, social media, or
@@ -299,7 +241,7 @@ function ExpandableTextSection(){
                   </p>
 
                   <div className="mt-4">
-                    <h3 className="text-xs text-slate-900">WHAT'S INCLUDED</h3>
+                    <h3 className="text-xs font-bold underline text-slate-900">WHAT'S INCLUDED</h3>
                     <ul className="service-list mt-3">
                       <li className="text-base text-slate-900">Typography & Color Palettes</li>
                       <li className="text-base text-slate-900">Reusable Component Library</li>
@@ -318,14 +260,14 @@ function ExpandableTextSection(){
                 <div className="column-inner">
                   <h2 className="text-4xl text-slate-900">Measurable Results</h2>
 
-                  <p className="text-md text-slate-900">
+                  <p className="font-semibold text-md text-slate-900">
                     We believe great design should deliver tangible outcomes. Every project
                     we undertake is measured not just by aesthetics, but by how well it serves
                     your business goals.
                   </p>
 
                   <div className="mt-4">
-                    <h3 className="text-xs text-slate-900">WHAT SUCCESS LOOKS LIKE</h3>
+                    <h3 className="text-xs font-bold underline text-slate-900">WHAT SUCCESS LOOKS LIKE</h3>
                     <ul className="service-list mt-3">
                       <li className="text-base text-slate-900">Faster Page Load Times — Better user experience and search rankings</li>
                       <li className="text-base text-slate-900">Improved Search Visibility — Higher rankings for relevant keywords</li>
@@ -337,7 +279,7 @@ function ExpandableTextSection(){
                   </div>
 
                   <div className="mt-5">
-                    <p className="text-md text-slate-900">
+                    <p className="font-semibold text-md text-slate-900">
                       Ready to discuss your project? Reach out at{' '}
                       <a href="mailto:hello@maderight.studio" className="inline-link text-amber-700">
                         hello@maderight.studio
