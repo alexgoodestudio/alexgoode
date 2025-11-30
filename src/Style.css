@@ -771,6 +771,14 @@
   width: 100%;
 }
 
+.column-inner p {
+  margin-bottom: 1.5rem;
+}
+
+.column-inner p:last-of-type {
+  margin-bottom: 0;
+}
+
 .column-inner h2 {
   font-weight: 600;
   line-height: 1.2;

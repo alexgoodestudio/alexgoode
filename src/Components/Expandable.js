@@ -209,11 +209,11 @@ function ExpandableTextSection(){
                   <div className="mt-4">
                     <h3 className="text-xs font-bold underline text-slate-900">OUR APPROACH</h3>
                     <ul className="service-list mt-3">
-                      <li className="text-base text-slate-900">Discovery & Research — Understanding your brand, audience, and goals</li>
-                      <li className="text-base text-slate-900">Strategy & Planning — Defining project scope, timeline, and deliverables</li>
-                      <li className="text-base text-slate-900">Design & Prototyping — Creating visual concepts and gathering feedback</li>
-                      <li className="text-base text-slate-900">Development & Testing — Building and optimizing your website</li>
-                      <li className="text-base text-slate-900">Launch & Training — Deploying your site and training your team</li>
+                      <li className="text-base text-slate-900"><span className='font-bold'>Discovery & Research</span> — Understanding your brand, audience, and goals</li>
+                      <li className="text-base text-slate-900"><span className='font-bold'>Strategy & Planning</span> — Defining project scope, timeline, and deliverables</li>
+                      <li className="text-base text-slate-900"><span className='font-bold'>Design & Prototyping</span> — Creating visual concepts and gathering feedback</li>
+                      <li className="text-base text-slate-900"><span className='font-bold'>Development & Testing</span> — Building and optimizing your website</li>
+                      <li className="text-base text-slate-900"><span className='font-bold'>Launch & Training</span> — Deploying your site and training your team</li>
                     </ul>
                   </div>
                 </div>
@@ -269,12 +269,12 @@ function ExpandableTextSection(){
                   <div className="mt-4">
                     <h3 className="text-xs font-bold underline text-slate-900">WHAT SUCCESS LOOKS LIKE</h3>
                     <ul className="service-list mt-3">
-                      <li className="text-base text-slate-900">Faster Page Load Times — Better user experience and search rankings</li>
-                      <li className="text-base text-slate-900">Improved Search Visibility — Higher rankings for relevant keywords</li>
-                      <li className="text-base text-slate-900">Increased Engagement — More time spent on site, lower bounce rates</li>
-                      <li className="text-base text-slate-900">Higher Conversion Rates — More inquiries, signups, or sales</li>
-                      <li className="text-base text-slate-900">Accessibility Compliance — Reaching a wider audience inclusively</li>
-                      <li className="text-base text-slate-900">Brand Consistency — Cohesive presence across all digital channels</li>
+                      <li className="text-base text-slate-900"><span className='font-bold'>Faster Page Load Times</span> — Better user experience and search rankings</li>
+                      <li className="text-base text-slate-900"><span className='font-bold'>Improved Search Visibility</span> — Higher rankings for relevant keywords</li>
+                      <li className="text-base text-slate-900"><span className='font-bold'>Increased Engagement</span> — More time spent on site, lower bounce rates</li>
+                      <li className="text-base text-slate-900"><span className='font-bold'>Higher Conversion Rates</span> — More inquiries, signups, or sales</li>
+                      <li className="text-base text-slate-900"><span className='font-bold'>Accessibility Compliance</span> — Reaching a wider audience inclusively</li>
+                      <li className="text-base text-slate-900"><span className='font-bold'>Brand Consistency</span> — Cohesive presence across all digital channels</li>
                     </ul>
                   </div>
 
