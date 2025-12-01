@@ -124,7 +124,7 @@ function Bento() {
                 e.currentTarget.style.color = '#134e4a';
               }}
             >
-              <span className="font-mono">Learn More</span>
+              <span className="font-mono font-semibold">Learn More</span>
             </Link>
           </div>
         </div>

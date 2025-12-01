@@ -70,9 +70,11 @@ function Nav() {
   return (
     <nav className="navbar navbar-light mb-0 bg-slate-200 text-slate-900 flex flex-col">
       {/* Always visible header */}
-      <div className="container-fluid d-flex justify-content-between align-items-center">
-        <Link to="/" className="navbar-brand btn btn-link p-0 text-decoration-none" onClick={closeNav}>
-          <span className="font-bold ">Alex Goode</span> | Made Right
+      <div className="container-fluid d-flex justify-content-between  align-items-center">
+        <Link to="/" className=" btn btn-link p-0  text-decoration-none " onClick={closeNav}>
+          <div className="text-slate-900 ps-lg-5 text-xl">
+          <span className="font-bold ">Alex Goode</span> <span className="px-1">|</span> Made Right Studio
+       </div>
         </Link>
         <button
           className="navbar-toggler  d-block"

@@ -569,6 +569,7 @@
   height: 100vh;
   background: white;
   width: 100%;
+  overflow: visible;
 }
 
 /* Fixed Column (Non-expandable, Far Left) */
@@ -580,6 +581,7 @@
   align-items: center;
   justify-content: center;
   padding: 2rem;
+  overflow: visible;
 }
 
 .fixed-column-inner {
@@ -588,12 +590,22 @@
   flex-direction: column;
   align-items: center;
   gap: 2rem;
+  overflow: visible;
+  position: relative;
 }
 
 .fixed-column-inner h2 {
   line-height: 1.2;
   letter-spacing: -0.015em;
   margin-bottom: 0;
+  overflow: visible;
+}
+
+.morph-letter {
+  display: inline-block;
+  position: relative;
+  will-change: transform, opacity, filter;
+  transform-style: preserve-3d;
 }
 
 .fixed-tagline {
@@ -822,6 +834,19 @@
   background: #0f172a;
   border: 2px solid #0f172a;
   flex-shrink: 0;
+}
+
+.expandable-column.expanded .column-inner h2::before {
+  animation: dotBounce 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@keyframes dotBounce {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 /* Color circles for each expanded section */

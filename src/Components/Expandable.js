@@ -3,6 +3,100 @@ import React, { useState, useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
 
+// Fixed Column with Particle Coalesce Animation
+const FixedColumnWithAnimation = () => {
+  const titleRef = useRef(null);
+  const containerRef = useRef(null);
+  const hasAnimated = useRef(false);
+
+  useEffect(() => {
+    if (!titleRef.current || hasAnimated.current) return;
+
+    // Check for reduced motion preference
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) {
+      hasAnimated.current = true;
+      return;
+    }
+
+    const letters = titleRef.current.querySelectorAll('.morph-letter');
+    const tagline = containerRef.current.querySelector('.fixed-tagline');
+    const cta = containerRef.current.querySelector('.fixed-cta');
+
+    // Self-Aware approach: Confident, minimal, perfect timing
+    const tl = gsap.timeline({
+      delay: 0.4
+    });
+
+    // Letters: Sequential reveal, left to right, minimal movement
+    letters.forEach((letter, index) => {
+      // Initial: Just invisible
+      gsap.set(letter, {
+        opacity: 0
+      });
+
+      // Reveal: Pure fade, no tricks
+      tl.to(letter, {
+        opacity: 1,
+        duration: 0.6,
+        ease: 'power2.inOut'
+      }, index * 0.05); // Tight, deliberate stagger
+    });
+
+    // Tagline: Appears after letters complete, pure fade
+    if (tagline) {
+      gsap.set(tagline, { opacity: 0 });
+      tl.to(tagline, {
+        opacity: 1,
+        duration: 0.8,
+        ease: 'power2.inOut'
+      }, '+=0.1');
+    }
+
+    // Button: Final element, pure fade
+    if (cta) {
+      gsap.set(cta, { opacity: 0 });
+      tl.to(cta, {
+        opacity: 1,
+        duration: 0.7,
+        ease: 'power2.inOut'
+      }, '-=0.4');
+    }
+
+    hasAnimated.current = true;
+  }, []);
+
+  return (
+    <div ref={containerRef} className="fixed-column bg-white">
+      <div className="fixed-column-inner">
+        <h2 ref={titleRef} className="text-fixed text-teal-800 eighties">
+          <span className="morph-letter">m</span>
+          <span className="morph-letter">a</span>
+          <span className="morph-letter">d</span>
+          <span className="morph-letter">e</span>
+          <span className="morph-letter">&nbsp;</span>
+          <span className="morph-letter">r</span>
+          <span className="morph-letter">i</span>
+          <span className="morph-letter">g</span>
+          <span className="morph-letter">h</span>
+          <span className="morph-letter">t</span>
+        </h2>
+        <p className="font-semibold text-sm text-teal-800 fixed-tagline">
+          Design-First <span className='italic'>Technology</span> Studio
+        </p>
+        <a
+          href="https://maderight.studio"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-xs tracking-wider px-3 py-3 rounded text-decoration-none text-white font-bold transition-colors duration-200 fixed-cta"
+        >
+          View Our Studio
+        </a>
+      </div>
+    </div>
+  );
+};
+
 const ExpandableColumn = ({ title, children, index, isExpanded, onExpand }) => {
   const contentRef = useRef(null);
   const columnRef = useRef(null);
@@ -105,23 +199,8 @@ function ExpandableTextSection(){
         <div className="col-12 p-0">
           <article className="expandable-section">
             <div className="expandable-columns-wrapper">
-              
-              <div className="fixed-column bg-white">
-                <div className="fixed-column-inner">
-                  <h2 className="text-fixed text-slate-900 eighties">made right</h2>
-                  <p className="font-semibold text-xs text-slate-600 fixed-tagline">
-                    Design-First <span className='italic'>Technology</span> Studio
-                  </p>
-                  <a
-                    href="https://maderight.studio"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-xs tracking-wider px-3 py-3 rounded text-decoration-none text-white font-bold transition-colors duration-200 fixed-cta"
-                  >
-                    View Our Studio
-                  </a>
-                </div>
-              </div>
+
+              <FixedColumnWithAnimation />
 
               <ExpandableColumn
                 title="Mission"
