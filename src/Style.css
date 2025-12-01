@@ -92,7 +92,7 @@
 /* Buttons / Small text */
 .text-button { font-size: 0.875rem; font-weight: 600; }
 .text-caption { font-size: 0.75rem; font-weight: 400; }
-.text-fixed { font-size: 4.15rem;  line-height: 1.2; }
+.text-fixed { font-size: 4.25rem;  line-height: 1.2; }
 .maderight {
   font-size: 2.16rem;
   font-weight: 600;
@@ -692,23 +692,26 @@
 }
 
 /* Hover and Expanded colors for each column - All unique colors */
-/* About */
+/* Mission (now first) */
+.expandable-column:nth-child(2) .column-indicator { background-color: #816281; border-color: #816281; }
 .expandable-column:nth-child(2):hover,
-.expandable-column:nth-child(2).expanded { background-color: #2B1B73; }
+.expandable-column:nth-child(2).expanded { background-color: #163826; }
 .expandable-column:nth-child(2):hover .column-title,
-.expandable-column:nth-child(2).expanded .column-title { color: #F2D4E5; }
+.expandable-column:nth-child(2).expanded .column-title { color: #816281; }
 .expandable-column:nth-child(2):hover .column-content *,
-.expandable-column:nth-child(2).expanded .column-content * { color: #F2D4E5 !important; }
+.expandable-column:nth-child(2).expanded .column-content * { color: #F3E8FF !important; }
 
-/* Mission */
+/* About (now second) */
+.expandable-column:nth-child(3) .column-indicator { background-color: #F2D4E5; border-color: #F2D4E5; }
 .expandable-column:nth-child(3):hover,
-.expandable-column:nth-child(3).expanded { background-color: #163826; }
+.expandable-column:nth-child(3).expanded { background-color: #2B1B73; }
 .expandable-column:nth-child(3):hover .column-title,
-.expandable-column:nth-child(3).expanded .column-title { color: #816281; }
+.expandable-column:nth-child(3).expanded .column-title { color: #F2D4E5; }
 .expandable-column:nth-child(3):hover .column-content *,
-.expandable-column:nth-child(3).expanded .column-content * { color: #F3E8FF !important; }
+.expandable-column:nth-child(3).expanded .column-content * { color: #F2D4E5 !important; }
 
 /* Tools */
+.expandable-column:nth-child(4) .column-indicator { background-color: #BB879D; border-color: #BB879D; }
 .expandable-column:nth-child(4):hover,
 .expandable-column:nth-child(4).expanded { background-color: #E6453A; }
 .expandable-column:nth-child(4):hover .column-title,
@@ -717,6 +720,7 @@
 .expandable-column:nth-child(4).expanded .column-content * { color: #FFF5F5 !important; }
 
 /* Deliverables */
+.expandable-column:nth-child(5) .column-indicator { background-color: #0d9488; border-color: #0d9488; }
 .expandable-column:nth-child(5):hover,
 .expandable-column:nth-child(5).expanded { background-color: #F7B6C8; }
 .expandable-column:nth-child(5):hover .column-title,
@@ -725,6 +729,7 @@
 .expandable-column:nth-child(5).expanded .column-content * { color: #0f766e !important; }
 
 /* Process */
+.expandable-column:nth-child(6) .column-indicator { background-color: #A1ADEB; border-color: #A1ADEB; }
 .expandable-column:nth-child(6):hover,
 .expandable-column:nth-child(6).expanded { background-color: #3B1F24; }
 .expandable-column:nth-child(6):hover .column-title,
@@ -733,6 +738,7 @@
 .expandable-column:nth-child(6).expanded .column-content * { color: #A1ADEB !important; }
 
 /* Design */
+.expandable-column:nth-child(7) .column-indicator { background-color: #eab308; border-color: #eab308; }
 .expandable-column:nth-child(7):hover,
 .expandable-column:nth-child(7).expanded { background-color: #E6FF66; }
 .expandable-column:nth-child(7):hover .column-title,
@@ -741,6 +747,7 @@
 .expandable-column:nth-child(7).expanded .column-content * { color: #713f12 !important; }
 
 /* Results */
+.expandable-column:nth-child(8) .column-indicator { background-color: #c2410c; border-color: #c2410c; }
 .expandable-column:nth-child(8):hover,
 .expandable-column:nth-child(8).expanded { background-color: #0F6B66; }
 .expandable-column:nth-child(8):hover .column-title,

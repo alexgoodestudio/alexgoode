@@ -89,11 +89,9 @@ const ExpandableColumn = ({ title, children, index, isExpanded, onExpand }) => {
 function ExpandableTextSection(){
   const [expandedColumn, setExpandedColumn] = useState(null);
 
-  // Set default expanded column based on screen size
+  // Set default expanded column to Mission (1) for all screen sizes
   useEffect(() => {
-    const isMobile = window.innerWidth <= 768;
-    // Mobile: About (1), Desktop: Mission (2)
-    setExpandedColumn(isMobile ? 1 : 2);
+    setExpandedColumn(1);
   }, []);
 
   const handleExpand = (index) => {
@@ -108,18 +106,18 @@ function ExpandableTextSection(){
           <article className="expandable-section">
             <div className="expandable-columns-wrapper">
               
-              <div className="fixed-column bg-teal-100">
+              <div className="fixed-column bg-white">
                 <div className="fixed-column-inner">
                   <h2 className="text-fixed text-slate-900 eighties">made right</h2>
                   <p className="font-semibold text-xs text-slate-600 pb-4">
-                    Design-First Web Development in Columbia, SC
+                    Design-First <span className='italic'>Technology</span> Studio
                   </p>
                   <div className='pb-4'>
                   <a
                     href="https://maderight.studio"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-md tracking-wider  bg-teal-700  px-3 py-3 rounded  text-decoration-none text-white font-bold  hover:bg-teal-900 transition-colors duration-200"
+                    className="text-xs tracking-wider  bg-amber-800  px-3 py-3 rounded  text-decoration-none text-white font-bold  hover:bg-teal-900 transition-colors duration-200"
                   >
                     View Our Studio 
                   </a>
@@ -128,35 +126,35 @@ function ExpandableTextSection(){
               </div>
 
               <ExpandableColumn
-                title="About"
+                title="Mission"
                 index="1"
                 isExpanded={expandedColumn === 1}
                 onExpand={() => handleExpand(1)}
-              >
-                <div className="column-inner ">
-                  <h2 className="text-4xl text-slate-900">About</h2>
-
-                  <p className="font-semibold text-md text-slate-900">
-                   Made Right Studio was started in April 2025 in Columbia, South Carolina by Alex Goode. After completing Promineo Tech's Front End Software Development Program and Thinkful's Full-Stack Software Engineering Immersion Program in 2023, combined with 4 years of graphic design experience, the goal was clear: build a design-first web development studio that helps small businesses stand out with fast, high-performing websites. We pride ourselves on combining design and development expertise with strategic SEO—using Next.js optimization, keyword analysis, metadata implementation, and other proven techniques to deliver sites that load faster, rank higher, and convert better.
-                  </p>
-
-                  
-
-
-                </div>
-              </ExpandableColumn>
-
-              <ExpandableColumn
-                title="Mission"
-                index="2"
-                isExpanded={expandedColumn === 2}
-                onExpand={() => handleExpand(2)}
               >
                 <div className="column-inner">
                   <h2 className="text-4xl text-slate-900">Our Mission</h2>
 
                   <p className="font-semibold text-md text-slate-900">
                     Made Right is a design-focused web development studio based in Columbia, South Carolina. We bring together creativity and technology to develop high-performing websites that showcase your brand and get found by the people who matter most to your business.
+                  </p>
+
+
+
+
+                </div>
+              </ExpandableColumn>
+
+              <ExpandableColumn
+                title="About"
+                index="2"
+                isExpanded={expandedColumn === 2}
+                onExpand={() => handleExpand(2)}
+              >
+                <div className="column-inner ">
+                  <h2 className="text-4xl text-slate-900">About</h2>
+
+                  <p className="font-semibold text-md text-slate-900">
+                   Made Right Studio was started in April 2025 in Columbia, South Carolina by Alex Goode. After completing Promineo Tech's Front End Software Development Program and Thinkful's Full-Stack Software Engineering Immersion Program in 2023, combined with 4 years of graphic design experience, the goal was clear: build a design-first web development studio that helps small businesses stand out with fast, high-performing websites. We pride ourselves on combining design and development expertise with strategic SEO—using Next.js optimization, keyword analysis, metadata implementation, and other proven techniques to deliver sites that load faster, rank higher, and convert better.
                   </p>
 
 
