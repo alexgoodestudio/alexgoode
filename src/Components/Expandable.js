@@ -109,19 +109,17 @@ function ExpandableTextSection(){
               <div className="fixed-column bg-white">
                 <div className="fixed-column-inner">
                   <h2 className="text-fixed text-slate-900 eighties">made right</h2>
-                  <p className="font-semibold text-xs text-slate-600 pb-4">
+                  <p className="font-semibold text-xs text-slate-600 fixed-tagline">
                     Design-First <span className='italic'>Technology</span> Studio
                   </p>
-                  <div className='pb-4'>
                   <a
                     href="https://maderight.studio"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-xs tracking-wider  bg-amber-800  px-3 py-3 rounded  text-decoration-none text-white font-bold  hover:bg-teal-900 transition-colors duration-200"
+                    className="text-xs tracking-wider px-3 py-3 rounded text-decoration-none text-white font-bold transition-colors duration-200 fixed-cta"
                   >
-                    View Our Studio 
+                    View Our Studio
                   </a>
-                  </div>
                 </div>
               </div>
 
