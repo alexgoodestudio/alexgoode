@@ -18,7 +18,7 @@ function GreenCard() {
     () => {
       const isMobile = window.innerWidth <= 768 || 'ontouchstart' in window;
       const tl = gsap.timeline({ delay: 0.5 });
-      
+
       // Scramble text animation
       tl.fromTo(
         nameRef.current,
@@ -32,6 +32,66 @@ function GreenCard() {
             revealDelay: 0.2,
           },
           ease: "power2.out",
+          onComplete: () => {
+            // Wait 4 seconds, then trigger Made Right Studio "Learn More" button animation
+            gsap.delayedCall(4, () => {
+              const madeRightCta = document.querySelector('.maderight-cta');
+
+              if (!madeRightCta) return;
+
+              // Check for reduced motion
+              const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+              if (prefersReducedMotion) return;
+
+              // On desktop: Two-Stage Bloom - Whitney editorial sophistication
+              if (!isMobile) {
+                // Set initial state
+                gsap.set(madeRightCta, {
+                  opacity: 0,
+                  scale: 0.85,
+                  transformOrigin: 'center center'
+                });
+
+                // Two-stage animation: overshoot then settle
+                const tl = gsap.timeline({
+                  onComplete: () => {
+                    // After initial animation, repeat every 7 seconds
+                    gsap.delayedCall(7, function repeatBloom() {
+                      const repeatTl = gsap.timeline();
+
+                      repeatTl.to(madeRightCta, {
+                        scale: 1.05,
+                        duration: 0.5,
+                        ease: 'power2.out'
+                      })
+                      .to(madeRightCta, {
+                        scale: 1.0,
+                        duration: 0.4,
+                        ease: 'power2.inOut'
+                      });
+
+                      // Schedule next repeat
+                      gsap.delayedCall(7, repeatBloom);
+                    });
+                  }
+                });
+
+                // Stage 1: Quick bloom with overshoot
+                tl.to(madeRightCta, {
+                  opacity: 1,
+                  scale: 1.05,
+                  duration: 0.5,
+                  ease: 'power2.out'
+                })
+                // Stage 2: Settle to final size
+                .to(madeRightCta, {
+                  scale: 1.0,
+                  duration: 0.4,
+                  ease: 'power2.inOut'
+                });
+              }
+            });
+          }
         }
       )
       // Only add breathing animation on desktop
@@ -45,7 +105,7 @@ function GreenCard() {
           delay: 1
         }, "-=0.5");
       }
-      
+
       // Rotate icon animation loop
       tl.to(iconRef.current, {
         rotation: 360,

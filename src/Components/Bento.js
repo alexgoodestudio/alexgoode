@@ -76,9 +76,49 @@ function Bento() {
         }
       });
 
+      // Made Right Studio "Learn More" button Two-Stage Bloom animation on mobile
+      const madeRightTrigger = ScrollTrigger.create({
+        trigger: ".maderight",
+        start: "center center",
+        once: true,
+        onEnter: () => {
+          const madeRightCta = document.querySelector('.maderight-cta');
+          if (!madeRightCta) return;
+
+          // Check for reduced motion
+          const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+          if (prefersReducedMotion) return;
+
+          // Set initial state
+          gsap.set(madeRightCta, {
+            opacity: 0,
+            scale: 0.85,
+            transformOrigin: 'center center'
+          });
+
+          // Two-stage animation: overshoot then settle
+          const tl = gsap.timeline();
+
+          // Stage 1: Quick bloom with overshoot
+          tl.to(madeRightCta, {
+            opacity: 1,
+            scale: 1.05,
+            duration: 0.5,
+            ease: 'power2.out'
+          })
+          // Stage 2: Settle to final size
+          .to(madeRightCta, {
+            scale: 1.0,
+            duration: 0.4,
+            ease: 'power2.inOut'
+          });
+        }
+      });
+
       return () => {
         greenCardTrigger.kill();
         blueCardTrigger.kill();
+        madeRightTrigger.kill();
       };
     }
   }, { scope: containerRef });
@@ -107,7 +147,7 @@ function Bento() {
             </p>
             <Link
               to="/maderight"
-              className="btn mt-3 text-decoration-none fw-medium px-4 py-2"
+              className="btn mt-3 text-decoration-none fw-medium px-4 py-2 maderight-cta"
               style={{
                 border: '1px solid #134e4a',
                 color: '#134e4a',

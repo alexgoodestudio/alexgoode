@@ -2,7 +2,6 @@ import { useRef } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { RotateCcw } from "lucide-react";
-
 function LinksCard() {
   const containerRef = useRef();
   const boxRef = useRef();
@@ -73,7 +72,7 @@ function LinksCard() {
           }}
         >
           <div className="align-items-start justify-content-center text-4xl text-green-800">
-            Owner of <span className="">Made Right Studio</span>, a creative web design and technology
+            Owner of <span className="">Made Right Studio</span>, a design-first technology
             studio that helps brands design, and develop top-performing websites.
           </div>
         </div>
