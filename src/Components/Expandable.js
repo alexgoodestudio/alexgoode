@@ -12,7 +12,6 @@ const FixedColumnWithAnimation = () => {
   useEffect(() => {
     if (!titleRef.current || hasAnimated.current) return;
 
-    // Check for reduced motion preference
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (prefersReducedMotion) {
       hasAnimated.current = true;
@@ -66,21 +65,77 @@ const FixedColumnWithAnimation = () => {
     hasAnimated.current = true;
   }, []);
 
+  // Playful GSAP hover animation for "made right" link
+  const handleMadeRightHover = () => {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) return;
+
+    const chars = titleRef.current?.querySelectorAll('.morph-letter');
+    if (!chars) return;
+
+    gsap.to(chars, {
+      y: -6,
+      rotation: () => gsap.utils.random(-12, 12),
+      scale: 1.15,
+      color: '#14b8a6', // Teal-500 on hover
+      duration: 0.4,
+      ease: 'back.out(3)',
+      stagger: {
+        amount: 0.25,
+        from: 'random'
+      }
+    });
+  };
+
+  const handleMadeRightLeave = () => {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) return;
+
+    const chars = titleRef.current?.querySelectorAll('.morph-letter');
+    if (!chars) return;
+
+    gsap.to(chars, {
+      y: 0,
+      rotation: 0,
+      scale: 1,
+      color: '#0f766e', // Back to teal-800
+      duration: 0.5,
+      ease: 'elastic.out(1, 0.6)',
+      stagger: {
+        amount: 0.2,
+        from: 'random'
+      }
+    });
+  };
+
   return (
     <div ref={containerRef} className="fixed-column bg-white">
       <div className="fixed-column-inner">
-        <h2 ref={titleRef} className="text-fixed text-teal-800 eighties">
-          <span className="morph-letter">m</span>
-          <span className="morph-letter">a</span>
-          <span className="morph-letter">d</span>
-          <span className="morph-letter">e</span>
-          <span className="morph-letter">&nbsp;</span>
-          <span className="morph-letter">r</span>
-          <span className="morph-letter">i</span>
-          <span className="morph-letter">g</span>
-          <span className="morph-letter">h</span>
-          <span className="morph-letter">t</span>
-        </h2>
+        <a
+          href="https://maderight.studio"
+          target="_blank"
+          rel="noopener noreferrer"
+          onMouseEnter={handleMadeRightHover}
+          onMouseLeave={handleMadeRightLeave}
+          style={{
+            textDecoration: 'none',
+            cursor: 'pointer',
+            userSelect: 'none'
+          }}
+        >
+          <h2 ref={titleRef} className="text-fixed text-teal-800 eighties">
+            <span className="morph-letter">m</span>
+            <span className="morph-letter">a</span>
+            <span className="morph-letter">d</span>
+            <span className="morph-letter">e</span>
+            <span className="morph-letter">&nbsp;</span>
+            <span className="morph-letter">r</span>
+            <span className="morph-letter">i</span>
+            <span className="morph-letter">g</span>
+            <span className="morph-letter">h</span>
+            <span className="morph-letter">t</span>
+          </h2>
+        </a>
         <p className="font-semibold text-sm text-teal-800 fixed-tagline">
           Design-First <span className='italic'>Technology</span> Studio
         </p>
