@@ -23,7 +23,7 @@ function Footer() {
   };
 
   return (
-    <div className="bg-slate-100 text-sm py-3">
+    <div className="bg-slate-100 py-3" style={{ fontSize: '0.8125rem' }}>
       <div className="d-flex justify-content-between align-items-center px-4">
         <a
           href="mailto:hello@maderight.studio"
@@ -40,7 +40,7 @@ function Footer() {
           hello@maderight.studio
         </a>
         <div>
-          Copyright © {currentYear} <span className="mx-1 text-gray-400">•</span> Made Right Studio
+          Copyright © {currentYear} <span className="mx-1 text-gray-400">•</span> <span className="d-none d-md-inline">Made Right Studio</span><span className="d-md-none">Made Right</span>
         </div>
       </div>
     </div>
