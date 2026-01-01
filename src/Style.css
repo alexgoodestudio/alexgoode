@@ -38,8 +38,20 @@
     font-style: normal;
     font-display: swap;
 }
+
+@font-face {
+    font-family: 'gliker';
+    src: url('./Components/Fonts/Gliker-Regular.woff2') format('woff2');
+    font-style: normal;
+    font-display: swap;
+}
+
 .gambarino{
   font-family: 'gambarino', sans-serif;
+}
+
+.gliker{
+  font-family: 'gliker', sans-serif;
 }
 
 .alpino{
