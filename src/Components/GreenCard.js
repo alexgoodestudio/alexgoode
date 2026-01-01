@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrambleTextPlugin } from "gsap/ScrambleTextPlugin";
@@ -12,6 +12,7 @@ function GreenCard() {
   const nameRef = useRef();
   const hintRef = useRef();
   const iconRef = useRef();
+  const [hasFlipped, setHasFlipped] = useState(false);
 
   // Initial animations with progressive disclosure
   useGSAP(
@@ -118,6 +119,55 @@ function GreenCard() {
     { scope: containerRef }
   );
 
+  // Mobile scroll-triggered flip - triggers on any scroll or touch
+  useEffect(() => {
+    const isMobile = window.innerWidth <= 768 || 'ontouchstart' in window;
+
+    if (!isMobile || hasFlipped) return;
+
+    let initialScrollY = window.scrollY;
+
+    const flipCard = () => {
+      if (!hasFlipped) {
+        gsap.to(boxRef.current, {
+          rotateX: 180,
+          duration: 0.7,
+          ease: "power2.inOut",
+          transformOrigin: "center center"
+        });
+        setHasFlipped(true);
+      }
+    };
+
+    const handleScroll = () => {
+      // Flip if scroll position has changed at all from initial
+      if (!hasFlipped && Math.abs(window.scrollY - initialScrollY) > 1) {
+        flipCard();
+      }
+    };
+
+    const handleTouchStart = () => {
+      if (!hasFlipped) {
+        initialScrollY = window.scrollY;
+      }
+    };
+
+    const handleTouchMove = () => {
+      // Flip immediately on any touch movement
+      flipCard();
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('touchstart', handleTouchStart, { passive: true });
+    window.addEventListener('touchmove', handleTouchMove, { passive: true });
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('touchstart', handleTouchStart);
+      window.removeEventListener('touchmove', handleTouchMove);
+    };
+  }, [hasFlipped]);
+
   // Flip card hover logic (desktop only)
   const handleHover = (hover) => {
     gsap.to(boxRef.current, {
@@ -127,7 +177,7 @@ function GreenCard() {
       transformOrigin: "center center",
       overwrite: true
     });
-    
+
     gsap.to(hintRef.current, {
       opacity: hover ? 0 : 1,
       duration: 0.3,
