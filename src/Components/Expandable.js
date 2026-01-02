@@ -22,7 +22,15 @@ const FixedColumnWithAnimation = () => {
     const tagline = containerRef.current.querySelector('.fixed-tagline');
     const cta = containerRef.current.querySelector('.fixed-cta');
 
-    // Self-Aware approach: Confident, minimal, perfect timing
+    // Set tagline and CTA to be visible immediately (no animation)
+    if (tagline) {
+      gsap.set(tagline, { opacity: 1 });
+    }
+    if (cta) {
+      gsap.set(cta, { opacity: 1 });
+    }
+
+    // Only animate "made right" letters
     const tl = gsap.timeline({
       delay: 0.4
     });
@@ -41,26 +49,6 @@ const FixedColumnWithAnimation = () => {
         ease: 'power2.inOut'
       }, index * 0.05); // Tight, deliberate stagger
     });
-
-    // Tagline: Appears after letters complete, pure fade
-    if (tagline) {
-      gsap.set(tagline, { opacity: 0 });
-      tl.to(tagline, {
-        opacity: 1,
-        duration: 0.8,
-        ease: 'power2.inOut'
-      }, '+=0.1');
-    }
-
-    // Button: Final element, pure fade
-    if (cta) {
-      gsap.set(cta, { opacity: 0 });
-      tl.to(cta, {
-        opacity: 1,
-        duration: 0.7,
-        ease: 'power2.inOut'
-      }, '-=0.4');
-    }
 
     hasAnimated.current = true;
   }, []);
@@ -136,8 +124,8 @@ const FixedColumnWithAnimation = () => {
             <span className="morph-letter">t</span>
           </h2>
         </a>
-        <p className="font-semibold text-sm text-teal-800 fixed-tagline">
-          Design-First <span className='italic'>Technology</span> Studio
+        <p className="font-semibold gs text-md text-teal-800 fixed-tagline">
+          Design-First <span className='italic font-bold pe-1'>Technology</span> Studio
         </p>
         <a
           href="https://maderight.studio"

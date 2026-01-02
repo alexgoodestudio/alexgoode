@@ -45,7 +45,7 @@ function Banner(){
         <div className="bg-slate-100 py-3 overflow-hidden" ref={marqueeRef}>
             <div className="marquee-content d-flex" style={{ whiteSpace: 'nowrap', willChange: 'transform' }}>
                 <h6 className="marquee-text bold text-xs m-0 d-inline-block">
-                    Full-Stack Web Developer<span className="mx-3 text-gray-400">•</span>Front-End Engineer<span className="mx-3 text-gray-400">•</span>Web Designer<span className="mx-3 text-gray-400">•</span>
+                    Full-Stack Web Developer<span className="mx-3 text-gray-400 ">•</span>Front-End Engineer<span className="mx-3 text-gray-400 ">•</span>Web Designer<span className="mx-3 text-gray-400 ">•</span>
                 </h6>
             </div>
         </div>

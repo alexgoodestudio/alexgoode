@@ -40,7 +40,7 @@ function Footer() {
           hello@maderight.studio
         </a>
         <div>
-          Copyright © {currentYear} <span className="mx-1 text-gray-400">•</span> <span className="d-none d-md-inline">Made Right Studio</span><span className="d-md-none">Made Right</span>
+          Copyright © {currentYear}<span className="d-none d-md-inline"> <span className="mx-1 text-gray-400">•</span> Made Right Studio</span>
         </div>
       </div>
     </div>
