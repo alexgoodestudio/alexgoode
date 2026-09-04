@@ -1,39 +1,48 @@
 # Alex Goode Portfolio
 
+🔗 **Live site:** [alexgoode.netlify.app](http://alexgoode.netlify.app/)
+
 ---
 
-## 👋 About Me
-Hi, I’m **Alex Goode** — a Full-Stack Web Developer & Designer with a passion for crafting smooth, engaging user experiences.  
-I specialize in **Front-End Web Development with React.js**, bringing together design and functionality to create meaningful digital products.  
+## About Me
 
+Hi, I'm **Alex Goode** — a Web Developer and Engineering Student.
 🎓 Graduate of:
-- **Promineo Tech** – Front End Software Development Program  
-- **Chegg Skills (formerly Thinkful)** – Full-Stack Software Engineering Immersion Program  
+- **Chegg Skills (formerly Thinkful)** – Full-Stack Software Engineering Immersion Program (2023)
+- **Community College of Philadelphia** – Front-End Software Development Certification Program (2023)
 
 ---
 
-##  Tech Stack
-- **Frontend:** React.js, GSAP, Tailwind CSS, Bootstrap  
-- **Backend & APIs:** Node.js, Express, REST  
-- **Tools:** Git, GitHub, VS Code  
+##Current:
+Civil Engineering Student at Midlands Technical College
 
 ---
 
-##  Portfolio Features
-- **Clean, modern design** with reusable components  
-- **Smooth animations & interactions** powered by GSAP  
-- **Responsive layouts** for desktop, tablet, and mobile  
-- **Real-world projects** — client work + personal experiments  
+## Tech Stack
+
+- **Frontend:** React.js, GSAP, Tailwind CSS, Bootstrap
+- **Backend & APIs:** Node.js, Express, REST, PostgreSQL (Knex.js)
+- **Tools:** Git, GitHub, VS Code
 
 ---
 
-## 📫 Let’s Connect
-I’d love to hear from you! Whether it’s collaboration, work opportunities, or just a hello:  
 
-- **Website:** [alexgoode.dev](#)  
-- **GitHub:** [github.com/alexgoode](#)  
-- **LinkedIn:** [linkedin.com/in/alexgoode](#)  
+## Featured Work
+
+- **[Made Right Studio](https://maderight.studio)** — creative web design & development studio
+- **[The Lemich Clinic](https://lemichclinic.netlify.app)** — healthcare website
+- **[Rosewood Cleaning](https://rosewoodcleaning.netlify.app)** — service business site
 
 ---
 
-Thanks for visiting my portfolio 
+## 📫 Let's Connect
+
+I'd love to hear from you! Whether it's collaboration, work opportunities, or just a hello:
+
+- **GitHub:** [github.com/alexgoodestudio](https://github.com/alexgoodestudio)
+- **LinkedIn:** [linkedin.com/in/alexgoodestudio](https://www.linkedin.com/in/alexgoodestudio/)
+- **Email:** [alexgoode2@gmail.com](mailto:alexgoode2@gmail.com)
+
+---
+
+Thanks for visiting my portfolio 🙌
